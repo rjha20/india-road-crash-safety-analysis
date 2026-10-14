@@ -16,21 +16,21 @@ Missingness uses empty/NA-like tokens. The source value `Nil` for Million Plus C
 |---|---:|---:|
 | `Age` | 729 | 25.16% |
 | `Gender` | 263 | 9.08% |
-| `Million Plus City` | 0 | 0.00% |
-| `Crash Date` | 0 | 0.00% |
-| `Killed` | 0 | 0.00% |
 | `Vehicle/Object 2` | 0 | 0.00% |
-| `Crash Type` | 0 | 0.00% |
-| `S. No.` | 0 | 0.00% |
-| `Vehicle 1` | 0 | 0.00% |
-| `Road Type` | 0 | 0.00% |
-| `Crash Day` | 0 | 0.00% |
-| `Location` | 0 | 0.00% |
-| `State` | 0 | 0.00% |
-| `Month` | 0 | 0.00% |
+| `Million Plus City` | 0 | 0.00% |
 | `Article Date` | 0 | 0.00% |
-| `LatLong` | 0 | 0.00% |
+| `Road Type` | 0 | 0.00% |
+| `Vehicle 1` | 0 | 0.00% |
+| `Location` | 0 | 0.00% |
 | `Injured` | 0 | 0.00% |
+| `LatLong` | 0 | 0.00% |
+| `Crash Type` | 0 | 0.00% |
+| `State` | 0 | 0.00% |
+| `Killed` | 0 | 0.00% |
+| `Crash Date` | 0 | 0.00% |
+| `Crash Day` | 0 | 0.00% |
+| `Month` | 0 | 0.00% |
+| `S. No.` | 0 | 0.00% |
 
 `Age` and `Gender` have source missingness, and may include multi-victim values. Their source values were deliberately omitted from processed event rows because they are not needed for this project’s model.
 
@@ -53,4 +53,4 @@ Missingness uses empty/NA-like tokens. The source value `Nil` for Million Plus C
 
 ## Reproduction and output handling
 
-Run `python -m road_safety.crash_data` from the project environment. Processed CSV/JSON outputs are generated under `data/processed/`. The pipeline omits victim Age/Gender values and all raw news article text from its processed files.
+Run `python -m road_safety.crash_data` from the project environment. The row-level `crash_events_clean.csv` remains local and gitignored. The shareable `reported_event_grid_public.csv` contains only year/state/coarse-cell counts and fatalities; cells with fewer than 5 sampled records per year/state slice are suppressed. It omits exact coordinates, dates, location descriptions, article text, and source row identifiers. Other processed CSV/JSON outputs are generated under `data/processed/`. The pipeline omits victim Age/Gender values and all raw news article text from its processed files.

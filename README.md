@@ -14,6 +14,12 @@ A reproducible data-science portfolio project that studies **where media-reporte
 
 The detailed rationale, source inventory, and complete phase plan are in [PROJECT_PLAN.md](PROJECT_PLAN.md).
 
+## Hosted dashboard
+
+The Streamlit Community Cloud deployment is configured from `dashboard/app.py` and reads only the aggregate artifacts committed under `data/processed/`; the local row-level event extract, raw article text, images, and model weights are not deployed. The event map uses the k-suppressed `reported_event_grid_public.csv` artifact. See [deployment and operations](docs/deployment.md) for setup and verification.
+
+This is a hosted retrospective research interface, not a live crash feed or operational road-safety system. Its sources are historical and cannot support exposure-adjusted road-segment risk estimates or safety decisions.
+
 ## Data and rights
 
 | Source | Use | Important boundary |
@@ -31,7 +37,7 @@ All source snapshots are local research inputs. `data/raw/` is excluded from Git
 - Python 3.11 or 3.12
 - `uv` for a locked environment
 - Optional PyTorch/Torchvision for the vision component; GPU is helpful but not required for the compact benchmark run
-- Optional JavaScript-free data review via generated CSV/HTML; Streamlit is used for the interactive local dashboard
+- Streamlit provides the interactive hosted dashboard; `uv` remains the reproducible environment for rebuilding analyses locally
 
 ## Quick start
 
@@ -69,25 +75,25 @@ Do not train a transformer by default: the corpus is small and the raw article t
 3. Obtain the India-only RDD2022 archive from the official challenge release and extract into `data/raw/rdd2022/India/`. The vision script should accept the VOC layout and print dataset discovery results before training.
 4. Download the official MoRTH report or use the versioned derived state table under `data/processed/` if its manifest is present.
 5. Run the full public-data workflow with `uv run python scripts/run_project.py`. To include CV, install `uv sync --extra vision`, obtain the India RDD2022 image subset with `uv run python -m road_safety.vision download-india`, then run `uv run python scripts/run_project.py --with-vision`. The orchestrator profiles annotations, creates a sequence-proxy grouped split, then runs a capped one-epoch training/evaluation; choose `uv run python -m road_safety.vision train --full-run` for the longer run.
-6. Launch the dashboard only after the derived aggregate outputs have been generated.
+6. The hosted dashboard can be opened from the link above using the committed aggregate outputs. For a local rebuild, generate the outputs first and then launch the dashboard.
 
 Runnable commands and outputs:
 
 | Component | Command | Primary output |
 |---|---|---|
-| Structured data quality | `uv run python -m road_safety.crash_data` | `reports/data_quality.md`; local row-level clean extract (ignored by Git) |
+| Structured data quality and release-safe map grid | `uv run python -m road_safety.crash_data` | `reports/data_quality.md`; local row-level extract (ignored) and `data/processed/reported_event_grid_public.csv` |
 | Official statistical baseline | `uv run python -m road_safety.statistics --reps 10000` | `reports/statistical_analysis.md`; state/UT aggregate table |
 | Spatial concentration | `uv run python -m road_safety.spatial` | `reports/spatial_hotspot_analysis.md`; coarse cells with fewer than five events suppressed |
 | 2022 narrative NLP | `uv run python -m road_safety.nlp` | `reports/nlp_and_model_evaluation.md`; aggregate theme counts only |
 | Conditional structured ML | `uv run python -m road_safety.crash_models` | `reports/nlp_and_model_evaluation.md`; grouped out-of-fold metrics and local fitted artifact |
 | Computer vision | `uv run python -m road_safety.vision profile`; `uv run python -m road_safety.vision split`; `uv run python -m road_safety.vision train` (default capped; `--full-run` for full split) | `reports/vision_evaluation.md`; independent RDD2022 benchmark results, when the optional archive and dependencies are available |
-| Dashboard | `uv run streamlit run dashboard/app.py` | Local review interface |
+| Dashboard | `uv run streamlit run dashboard/app.py` | Local copy of the hosted aggregate-only review interface |
 | Full rebuild | `uv run python scripts/run_project.py` | Rebuildable non-CV outputs; add `--with-vision` only after installing the vision extra and obtaining the India subset |
 
 ## Data handling and modeling principles
 
 - Keep the source row number only in the locally ignored structured extract for QA; omit victim age/gender values and all news text from derived rows.
-- Do not display names, article bodies, or row-level crash/victim characteristics in the dashboard. Map output is aggregated into coarse cells before plotting.
+- Do not display names, article bodies, or row-level crash/victim characteristics in the dashboard. The published event map uses coarse year/state cells with a five-event support threshold.
 - Parse date and coordinate fields explicitly; keep invalid/unmatched records visible in QA counts rather than silently dropping them.
 - Remove exact duplicate article bodies before corpus-level counts. For structured events, keep ambiguous duplicate signatures visible and report sensitivity rather than silently merging possible distinct crashes. The severity model holds out state groups; it has no future-year or external validation.
 - Use grouped validation where source/geographic clusters matter; a future-year holdout should be added when the data and estimand support it. Never rely on a random row split as the sole evidence of generalization.
@@ -103,9 +109,9 @@ PROJECT_PLAN.md               Senior-level end-to-end implementation plan
 configs/project.yml           Sources, scope, reproducibility settings
 src/road_safety/               Ingestion, QA, statistics, NLP, ML, CV modules
 data/raw/                      Local inputs; ignored by Git
-data/processed/                 Reproducible aggregate tables and metrics; row-level extracts are locally ignored
+data/processed/                 Published aggregates and metrics; row-level extracts are locally ignored
 reports/                        Data, method, evaluation, and case-study reports
-dashboard/app.py                Local analyst-review dashboard
+dashboard/app.py                Hosted aggregate-only analyst-review dashboard
 scripts/run_project.py          Full workflow orchestrator
 ```
 

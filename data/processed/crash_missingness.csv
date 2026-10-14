@@ -1,18 +1,18 @@
 source_column,missing_count,missing_pct
 Age,729,25.15527950310559
 Gender,263,9.075224292615596
-Million Plus City,0,0.0
-Crash Date,0,0.0
-Killed,0,0.0
 Vehicle/Object 2,0,0.0
-Crash Type,0,0.0
-S. No.,0,0.0
-Vehicle 1,0,0.0
-Road Type,0,0.0
-Crash Day,0,0.0
-Location,0,0.0
-State,0,0.0
-Month,0,0.0
+Million Plus City,0,0.0
 Article Date,0,0.0
-LatLong,0,0.0
+Road Type,0,0.0
+Vehicle 1,0,0.0
+Location,0,0.0
 Injured,0,0.0
+LatLong,0,0.0
+Crash Type,0,0.0
+State,0,0.0
+Killed,0,0.0
+Crash Date,0,0.0
+Crash Day,0,0.0
+Month,0,0.0
+S. No.,0,0.0

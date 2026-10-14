@@ -1,0 +1,5 @@
+# Minimal runtime for dashboard/app.py on Streamlit Community Cloud.
+# The full analysis environment remains pinned by pyproject.toml and uv.lock.
+streamlit==1.65.0
+pandas==2.3.3
+plotly==6.9.0

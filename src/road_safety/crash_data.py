@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import math
 import re
 from dataclasses import dataclass
 from datetime import date, datetime
@@ -47,6 +48,8 @@ REQUIRED_COLUMNS = {
 
 MISSING_TOKENS = {"", "na", "n/a", "nan", "none", "null", "unknown", "not reported", "-"}
 INDIA_BOUNDS = (6.0, 38.0, 67.0, 98.0)  # broad QA envelope, not a geocoder
+PUBLIC_GRID_CELL_DEGREES = 0.25
+PUBLIC_GRID_MIN_SUPPORT = 5
 
 
 @dataclass
@@ -57,6 +60,64 @@ class CrashDataResult:
     duplicate_rows: pd.DataFrame
     dictionary: pd.DataFrame
     source_sha256: str
+
+
+def build_public_event_grid(
+    events: pd.DataFrame,
+    *,
+    cell_degrees: float = PUBLIC_GRID_CELL_DEGREES,
+    min_support: int = PUBLIC_GRID_MIN_SUPPORT,
+) -> pd.DataFrame:
+    """Build a shareable coarse grid without publishing row-level event records.
+
+    Each released slice is grouped by year, state, and 0.25-degree cell.
+    Groups below the minimum support are suppressed before writing.
+    Article text, dates, exact coordinates, and source row identifiers are
+    deliberately excluded.
+    """
+    if cell_degrees <= 0 or min_support < 1:
+        raise ValueError("cell_degrees and min_support must be positive")
+    required = {"crash_date", "state", "latitude", "longitude", "killed"}
+    missing = required.difference(events.columns)
+    if missing:
+        raise ValueError(f"Missing columns for public grid: {', '.join(sorted(missing))}")
+
+    frame = events.loc[:, sorted(required)].copy()
+    frame["crash_date"] = pd.to_datetime(frame["crash_date"], errors="coerce")
+    frame["latitude"] = pd.to_numeric(frame["latitude"], errors="coerce")
+    frame["longitude"] = pd.to_numeric(frame["longitude"], errors="coerce")
+    frame["killed"] = pd.to_numeric(frame["killed"], errors="coerce")
+    frame = frame.dropna(subset=["crash_date", "latitude", "longitude"])
+    if frame.empty:
+        return pd.DataFrame(
+            columns=[
+                "year", "state", "cell_latitude", "cell_longitude",
+                "reported_events", "recorded_fatalities",
+            ]
+        )
+
+    frame["year"] = frame["crash_date"].dt.year.astype(int)
+    frame["state"] = frame["state"].astype("string").fillna("Unknown")
+    frame["state"] = frame["state"].astype("string").str.strip().replace("", "Unknown").fillna("Unknown")
+    frame["cell_latitude"] = frame["latitude"].map(
+        lambda value: (math.floor(float(value) / cell_degrees) + 0.5) * cell_degrees
+    )
+    frame["cell_longitude"] = frame["longitude"].map(
+        lambda value: (math.floor(float(value) / cell_degrees) + 0.5) * cell_degrees
+    )
+
+    group_columns = ["year", "state", "cell_latitude", "cell_longitude"]
+    public_grid = (
+        frame.groupby(group_columns, dropna=False, as_index=False)
+        .agg(
+            reported_events=("crash_date", "size"),
+            recorded_fatalities=("killed", lambda values: values.sum(min_count=1)),
+        )
+    )
+    public_grid = public_grid[public_grid["reported_events"] >= min_support].copy()
+    public_grid["cell_latitude"] = public_grid["cell_latitude"].round(3)
+    public_grid["cell_longitude"] = public_grid["cell_longitude"].round(3)
+    return public_grid.sort_values(group_columns, kind="stable").reset_index(drop=True)
 
 
 def _header(value: Any) -> str:
@@ -184,7 +245,9 @@ def load_and_profile(source: Path = DEFAULT_SOURCE, dictionary_path: Path = DEFA
             "missing_count": int(semantic_missing.sum()),
             "missing_pct": float(semantic_missing.mean() * 100),
         })
-    missingness = pd.DataFrame(missing_records).sort_values("missing_pct", ascending=False)
+    missingness = pd.DataFrame(missing_records).sort_values(
+        "missing_pct", ascending=False, kind="stable"
+    )
 
     # Do not export age or gender lists: they can contain identifiable victim
     # attributes and are not used by the model.
@@ -250,7 +313,9 @@ def load_and_profile(source: Path = DEFAULT_SOURCE, dictionary_path: Path = DEFA
 def write_outputs(result: CrashDataResult, output_dir: Path = DEFAULT_OUTPUT, report_path: Path = DEFAULT_REPORT) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
     report_path.parent.mkdir(parents=True, exist_ok=True)
+    public_grid = build_public_event_grid(result.events)
     result.events.to_csv(output_dir / "crash_events_clean.csv", index=False)
+    public_grid.to_csv(output_dir / "reported_event_grid_public.csv", index=False)
     result.missingness.to_csv(output_dir / "crash_missingness.csv", index=False)
     result.duplicate_rows.to_csv(output_dir / "crash_duplicate_signatures.csv", index=False)
     result.dictionary.to_csv(output_dir / "crash_data_dictionary.csv", index=False)
@@ -259,6 +324,9 @@ def write_outputs(result: CrashDataResult, output_dir: Path = DEFAULT_OUTPUT, re
     )
 
     q = result.quality
+    q["public_grid_cells"] = int(len(public_grid))
+    q["public_grid_events"] = int(public_grid["reported_events"].sum()) if not public_grid.empty else 0
+    q["public_grid_cell_min_support"] = PUBLIC_GRID_MIN_SUPPORT
     miss_lines = [
         f"| `{row.source_column}` | {row.missing_count:,} | {row.missing_pct:.2f}% |"
         for row in result.missingness.itertuples(index=False)
@@ -302,7 +370,7 @@ Missingness uses empty/NA-like tokens. The source value `Nil` for Million Plus C
 
 ## Reproduction and output handling
 
-Run `python -m road_safety.crash_data` from the project environment. Processed CSV/JSON outputs are generated under `data/processed/`. The pipeline omits victim Age/Gender values and all raw news article text from its processed files.
+Run `python -m road_safety.crash_data` from the project environment. The row-level `crash_events_clean.csv` remains local and gitignored. The shareable `reported_event_grid_public.csv` contains only year/state/coarse-cell counts and fatalities; cells with fewer than {PUBLIC_GRID_MIN_SUPPORT} sampled records per year/state slice are suppressed. It omits exact coordinates, dates, location descriptions, article text, and source row identifiers. Other processed CSV/JSON outputs are generated under `data/processed/`. The pipeline omits victim Age/Gender values and all raw news article text from its processed files.
 """
     report_path.write_text(report, encoding="utf-8")
 

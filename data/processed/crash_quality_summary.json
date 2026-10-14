@@ -38,51 +38,11 @@
       "count": 263,
       "pct": 9.0752
     },
-    "Million Plus City": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Crash Date": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Killed": {
-      "count": 0,
-      "pct": 0.0
-    },
     "Vehicle/Object 2": {
       "count": 0,
       "pct": 0.0
     },
-    "Crash Type": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "S. No.": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Vehicle 1": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Road Type": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Crash Day": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Location": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "State": {
-      "count": 0,
-      "pct": 0.0
-    },
-    "Month": {
+    "Million Plus City": {
       "count": 0,
       "pct": 0.0
     },
@@ -90,11 +50,51 @@
       "count": 0,
       "pct": 0.0
     },
-    "LatLong": {
+    "Road Type": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Vehicle 1": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Location": {
       "count": 0,
       "pct": 0.0
     },
     "Injured": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "LatLong": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Type": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "State": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Killed": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Date": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Day": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Month": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "S. No.": {
       "count": 0,
       "pct": 0.0
     }

@@ -2,7 +2,7 @@
 
 ## Executive summary
 
-This portfolio project joins several complementary analyses while keeping their source populations separate: official MoRTH state aggregates, 2,898 fatal crashes reported by *The Times of India* and compiled in Mendeley v7, 1,565 unique 2022 news articles, and an independent RDD2022 India road-damage image benchmark. It demonstrates statistical inference, spatial clustering, NLP, supervised ML, computer vision, data quality, and a local review dashboard.
+This portfolio project joins several complementary analyses while keeping their source populations separate: official MoRTH state aggregates, 2,898 fatal crashes reported by *The Times of India* and compiled in Mendeley v7, 1,565 unique 2022 news articles, and an independent RDD2022 India road-damage image benchmark. It demonstrates statistical inference, spatial clustering, NLP, supervised ML, computer vision, data quality, and a hosted aggregate-only review dashboard.
 
 It does **not** estimate Indian road-segment crash risk. The crash records are fatal-only and media-selected; there is no exposure denominator, no verified road-network match, and no representative all-crash event set. The imagery is not linked to the crash reports. Every location pattern here is an exploratory reported-event concentration that would need independent data and qualified engineering review.
 
@@ -93,6 +93,8 @@ uv sync
 uv run python scripts/run_project.py
 uv run streamlit run dashboard/app.py
 ```
+
+The deployed dashboard uses only committed aggregate artifacts. Its crash map reads `data/processed/reported_event_grid_public.csv`; the local row-level event extract is not deployed.
 
 For the independent India RDD2022 benchmark, install the optional CV libraries and acquire the selected India/train files:
 

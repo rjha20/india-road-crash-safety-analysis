@@ -1,4 +1,4 @@
-"""Local, aggregate-only review dashboard for the India road-safety project."""
+"""Hosted, aggregate-only research dashboard for the India road-safety project."""
 
 from __future__ import annotations
 
@@ -47,11 +47,12 @@ def metric_or_na(value: object, digits: int = 0) -> str:
 
 
 st.title("India Road-Crash Hotspot and Hazard Analysis")
-st.caption("Local analyst review • aggregated outputs only • refreshed from files in this project folder")
+st.caption("Hosted portfolio dashboard • historical source vintage: crash reports through 2023, MoRTH 2023, and RDD2022")
 st.warning(
     "These sources describe different populations. MoRTH figures are official administrative totals. "
     "The event and article analyses use a media-selected sample of fatal crashes. Neither is an "
-    "exposure-adjusted road-segment risk estimate. The road-image benchmark is a separate dataset."
+    "exposure-adjusted road-segment risk estimate. This is not a live incident feed or operational "
+    "safety service. The road-image benchmark is a separate dataset."
 )
 
 tabs = st.tabs(
@@ -145,86 +146,76 @@ with tabs[2]:
     st.header("Media-reported fatal-crash event sample")
     st.caption("Source population: 2,898 structured records compiled from Times of India reporting (Mendeley v7).")
     st.warning(
-        "The map shows counts of reported sample records in coarse 0.25° grid cells, with a minimum "
-        "cell-count filter. It does not rank dangerous roads or estimate crash risk; there is no traffic-exposure denominator."
+        "This map shows coarse concentrations in a media-reported fatal-crash sample. It does not rank "
+        "dangerous roads or estimate crash risk; there is no traffic-exposure denominator."
     )
-    cols = ("crash_date", "state", "latitude", "longitude", "road_type", "killed")
-    events = read_csv(PROCESSED / "crash_events_clean.csv", columns=cols)
-    if events.empty:
-        show_missing("The processed event file is not available yet. Run the data preparation step first.")
+    cols = (
+        "year", "state", "cell_latitude", "cell_longitude", "reported_events", "recorded_fatalities",
+    )
+    public_events = read_csv(PROCESSED / "reported_event_grid_public.csv", columns=cols)
+    if public_events.empty:
+        show_missing("The shareable aggregate grid is not available yet. See the data preparation instructions.")
     else:
-        events["crash_date"] = pd.to_datetime(events["crash_date"], errors="coerce")
-        events["year"] = events["crash_date"].dt.year
-        years = sorted(events["year"].dropna().astype(int).unique().tolist())
-        states = sorted(events["state"].dropna().astype(str).unique().tolist())
-        road_types = sorted(events["road_type"].dropna().astype(str).unique().tolist())
-        one, two, three = st.columns(3)
+        public_events["year"] = pd.to_numeric(public_events["year"], errors="coerce")
+        years = sorted(public_events["year"].dropna().astype(int).unique().tolist())
+        states = sorted(public_events["state"].dropna().astype(str).unique().tolist())
+        one, two = st.columns(2)
         with one:
             selected_years = st.multiselect("Crash year", years, default=years)
         with two:
-            selected_states = st.multiselect("State/UT", states, default=[] , help="Leave empty to include every state/UT.")
-        with three:
-            selected_roads = st.multiselect("Road type", road_types, default=[] , help="Leave empty to include every road type.")
-        subset = events[events["year"].isin(selected_years)].copy()
+            selected_states = st.multiselect("State/UT", states, default=[], help="Leave empty to include every state/UT.")
+        subset = public_events[public_events["year"].isin(selected_years)].copy()
         if selected_states:
             subset = subset[subset["state"].astype(str).isin(selected_states)]
-        if selected_roads:
-            subset = subset[subset["road_type"].astype(str).isin(selected_roads)]
-        valid_geo = subset.dropna(subset=["latitude", "longitude"]).copy()
-        min_count = st.slider("Minimum sampled events per map cell", min_value=5, max_value=20, value=5)
         if subset.empty:
             st.info("No records match these filters.")
         else:
-            total_events = len(subset)
-            recorded_deaths = pd.to_numeric(subset["killed"], errors="coerce").sum()
-            x, y, z = st.columns(3)
-            x.metric("Sampled records in selection", f"{total_events:,}")
-            y.metric("Recorded fatalities in selection", f"{recorded_deaths:,.0f}")
-            z.metric("Rows with coordinates", f"{len(valid_geo):,}")
-            st.caption("These are aggregate sample totals. No individual event or victim-level rows are displayed.")
-            if valid_geo.empty:
-                show_missing("No valid coordinates in this selection.")
-            else:
-                # Coarsen before plotting: only cell centroids and aggregate counts reach the chart.
-                cell_size = 0.25
-                valid_geo["lat_cell"] = (valid_geo["latitude"] / cell_size).apply(math.floor) * cell_size
-                valid_geo["lon_cell"] = (valid_geo["longitude"] / cell_size).apply(math.floor) * cell_size
-                grid = (
-                    valid_geo.groupby(["lat_cell", "lon_cell"], as_index=False)
-                    .agg(sample_events=("killed", "size"), recorded_fatalities=("killed", "sum"))
+            grid = (
+                subset.groupby(["cell_latitude", "cell_longitude"], as_index=False)
+                .agg(
+                    sample_events=("reported_events", "sum"),
+                    recorded_fatalities=("recorded_fatalities", "sum"),
                 )
-                grid = grid[grid["sample_events"] >= min_count].copy()
-                grid["latitude"] = grid["lat_cell"] + cell_size / 2
-                grid["longitude"] = grid["lon_cell"] + cell_size / 2
-                if grid.empty:
-                    st.info("No grid cell meets the selected minimum count. Lower the threshold or widen the filters.")
-                else:
-                    map_fig = px.scatter_map(
-                        grid,
-                        lat="latitude",
-                        lon="longitude",
-                        size="sample_events",
-                        color="sample_events",
-                        hover_data={
-                            "sample_events": ":,",
-                            "recorded_fatalities": ":,",
-                            "latitude": False,
-                            "longitude": False,
-                        },
-                        zoom=3,
-                        center={"lat": 22.8, "lon": 79.0},
-                        map_style="open-street-map",
-                        title="Coarse-grid concentration of sampled reported events",
-                    )
-                    map_fig.update_layout(margin={"r": 0, "t": 45, "l": 0, "b": 0})
-                    st.plotly_chart(map_fig, width="stretch")
-                    st.caption("Map symbols are 0.25° cell centroids; cells below the chosen count threshold are hidden.")
-        if not events.empty:
-            by_state = events.groupby("state", dropna=True).agg(
-                sampled_events=("killed", "size"), recorded_fatalities=("killed", "sum")
-            ).reset_index().sort_values("sampled_events", ascending=False).head(15)
-            chart = px.bar(by_state.sort_values("sampled_events"), x="sampled_events", y="state", orientation="h", title="States with most records in the full media sample")
-            chart.update_layout(xaxis_title="Sampled event records", yaxis_title="")
+            )
+            min_count = st.slider("Minimum sampled events per map cell", min_value=5, max_value=20, value=5)
+            grid = grid[grid["sample_events"] >= min_count].copy()
+            x, y, z = st.columns(3)
+            x.metric("Events in published cells", f"{int(grid['sample_events'].sum()):,}")
+            y.metric("Recorded fatalities in published cells", f"{int(grid['recorded_fatalities'].sum()):,}")
+            z.metric("Published grid cells", f"{len(grid):,}")
+            st.caption(
+                "Only year × state × 0.25° cells with at least five sampled events are "
+                "published. Smaller groups are suppressed before deployment; cell centers are approximate."
+            )
+            if grid.empty:
+                show_missing("No published cell meets the selected support threshold. Widen the filters or lower the threshold.")
+            else:
+                map_fig = px.scatter_map(
+                    grid,
+                    lat="cell_latitude",
+                    lon="cell_longitude",
+                    size="sample_events",
+                    color="sample_events",
+                    hover_data={
+                        "sample_events": ":,",
+                        "recorded_fatalities": ":,",
+                        "cell_latitude": False,
+                        "cell_longitude": False,
+                    },
+                    zoom=3,
+                    center={"lat": 22.8, "lon": 79.0},
+                    map_style="open-street-map",
+                    title="Coarse-grid concentration of sampled reported events",
+                )
+                map_fig.update_layout(margin={"r": 0, "t": 45, "l": 0, "b": 0})
+                st.plotly_chart(map_fig, width="stretch")
+                st.caption("Each symbol represents the approximate centroid of a 0.25° cell.")
+            by_state = subset.groupby("state", dropna=True).agg(
+                sampled_events=("reported_events", "sum"),
+                recorded_fatalities=("recorded_fatalities", "sum"),
+            ).reset_index().sort_values("sampled_events", ascending=True).tail(15)
+            chart = px.bar(by_state.sort_values("sampled_events"), x="sampled_events", y="state", orientation="h", title="States with most reported events in published cells")
+            chart.update_layout(xaxis_title="Events in published cells", yaxis_title="")
             st.plotly_chart(chart, width="stretch")
 
 with tabs[3]:
