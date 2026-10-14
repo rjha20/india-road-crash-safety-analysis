@@ -16,7 +16,7 @@ The detailed rationale, source inventory, and complete phase plan are in [PROJEC
 
 ## Hosted dashboard
 
-The Streamlit Community Cloud deployment is configured from `dashboard/app.py` and reads only the aggregate artifacts committed under `data/processed/`; the local row-level event extract, raw article text, images, and model weights are not deployed. The event map uses the k-suppressed `reported_event_grid_public.csv` artifact. See [deployment and operations](docs/deployment.md) for setup and verification.
+Open the [live Streamlit dashboard](https://india-road-crash-safety-analysis-lffexwhoskco8qnavbxl9r.streamlit.app/). It runs `dashboard/app.py` from the `main` branch and reads only aggregate artifacts committed under `data/processed/`; the local row-level event extract, raw article text, images, and model weights are not deployed. The event map uses the k-suppressed `reported_event_grid_public.csv` artifact. See [deployment and operations](docs/deployment.md) for setup and verification.
 
 This is a hosted retrospective research interface, not a live crash feed or operational road-safety system. Its sources are historical and cannot support exposure-adjusted road-segment risk estimates or safety decisions.
 

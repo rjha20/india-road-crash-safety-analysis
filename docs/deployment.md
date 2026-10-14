@@ -2,7 +2,7 @@
 
 ## Current deployment shape
 
-The Streamlit Community Cloud app runs `dashboard/app.py` from this repository's `main` branch. It is a public, retrospective portfolio dashboard over versioned aggregate artifacts committed under `data/processed/`. The app does not connect to a live crash feed, authenticate to government systems, ingest source text, load road images, or serve model predictions.
+The public Streamlit Community Cloud app is [india-road-crash-safety-analysis-lffexwhoskco8qnavbxl9r.streamlit.app](https://india-road-crash-safety-analysis-lffexwhoskco8qnavbxl9r.streamlit.app/). It runs `dashboard/app.py` from this repository's `main` branch and reads versioned aggregate artifacts committed under `data/processed/`. The app does not connect to a live crash feed, authenticate to government systems, ingest source text, load road images, or serve model predictions.
 
 Runtime packages are pinned in the root `requirements.txt` and Python is pinned to 3.12 in `.python-version`. The broader analysis environment is managed separately with `uv.lock` and `pyproject.toml`.
 
@@ -24,7 +24,7 @@ The 0.25-degree map symbols are approximate cell centers, not road-segment locat
 2. Create an app from repository `rjha20/india-road-crash-safety-analysis`, branch `main`, and entrypoint `dashboard/app.py`.
 3. Select Python 3.12. No app secrets are required.
 4. Wait for the initial deployment to finish. Confirm the app loads the overview and all six tabs, then check the Cloud logs if startup fails.
-5. Record the assigned app URL in this file and the README once verified.
+5. Verify the assigned app URL against the live page and record it in this file and the README.
 
 Subsequent commits to `main` trigger a Streamlit rebuild. The dashboard is intended to require no credentials because it reads only committed aggregate files.
 
