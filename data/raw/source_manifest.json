@@ -1,0 +1,145 @@
+{
+  "generated_on": "2026-10-07",
+  "project": "India Road-Crash Hotspot and Hazard Analysis",
+  "notice": "Local source files are not redistributed; verify current terms before any sharing.",
+  "sources": [
+    {
+      "name": "Media Reported Road Traffic Crash Data",
+      "provider": "Mendeley Data",
+      "version": "7",
+      "doi": "10.17632/bc5sv6wnd9.7",
+      "url": "https://data.mendeley.com/datasets/bc5sv6wnd9/7",
+      "published": "2025-01-27",
+      "dataset_license": "CC BY 4.0 per landing page",
+      "records": [
+        {
+          "path": "data/raw/mendeley/v7/news_crashes.xlsx",
+          "status": "downloaded",
+          "bytes": 362593,
+          "sha256": "02ece51f1c04ea44fe3ccbafac150e4c937be79b1d5c1216dc68ab32c66a4228",
+          "role": "structured event sample",
+          "rights_note": "Mendeley Data v7 Data Files folder; CC BY 4.0 dataset compilation; underlying source limitations apply"
+        },
+        {
+          "path": "data/raw/mendeley/v7/data_dictionary.xlsx",
+          "status": "downloaded",
+          "bytes": 10004,
+          "sha256": "60d5e5e0e7850b5edc2157b229fec6cbeee037985782599a3bdda7efb1d51770",
+          "role": "field definitions",
+          "rights_note": "Mendeley Data v7 Data Files folder"
+        },
+        {
+          "path": "data/raw/mendeley/v7/raw_articles/2022_raw_data.csv",
+          "status": "downloaded",
+          "bytes": 2251157,
+          "sha256": "da8c3fb8058d5953b321a1f227fb1fc5936cb1169f87ecc86035d6434234e755",
+          "role": "2022 raw news article text for local NLP only",
+          "rights_note": "Mendeley Data v7 Raw Data folder; news article text subject to underlying copyright; do not redistribute"
+        },
+        {
+          "path": "data/raw/mendeley/v7/raw_articles/2023_download_error.json",
+          "status": "download_error_not_data",
+          "bytes": 395,
+          "sha256": "2e118e328ee7484c4b3329055b1440b9476c7b04fa2fbd0961804ccc20560590",
+          "role": "failed API response; excluded from all analysis",
+          "rights_note": "Do not parse or count as records."
+        }
+      ]
+    },
+    {
+      "name": "Road Accidents in India 2023",
+      "provider": "Ministry of Road Transport and Highways, India",
+      "url": "https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf",
+      "use": "aggregate context; derived table provenance must include report page and table",
+      "license_note": "Recheck official reuse terms before redistribution",
+      "status": "downloaded_and_extracted",
+      "records": [
+        {
+          "path": "data/raw/sources/Road-Accident-in-India-2023-Publications.pdf",
+          "status": "downloaded",
+          "bytes": 8596105,
+          "sha256": "901505420D5B387052AC51E36B4BDCE0274F6326B614F9EBCEE6E7954D45B5B0",
+          "role": "official aggregate source for selected state and NH tables",
+          "rights_note": "Check official reuse terms before redistributing the source PDF or derived materials"
+        }
+      ]
+    },
+    {
+      "name": "RDD2022 India road damage images",
+      "provider": "Figshare / CRDDC 2022",
+      "version": "1",
+      "doi": "10.6084/m9.figshare.21431547.v1",
+      "url": "https://doi.org/10.6084/m9.figshare.21431547.v1",
+      "dataset_license": "CC BY 4.0 per Figshare; review any challenge-side conditions",
+      "challenge_page_license": "CC BY-SA 4.0 per CRDDC challenge page; confirm applicable terms for the exact images before redistribution",
+      "status": "India_train_subset_downloaded_by_verified_HTTP_byte_ranges",
+      "retrieval": {
+        "retrieved_on": "2026-10-07",
+        "full_archive_downloaded": false,
+        "archive_name": "RDD2022_released_through_CRDDC2022.zip",
+        "archive_size_bytes": 13264172619,
+        "archive_md5": "b62bd51d2ffcfaa76c60f234f0cc2bb3",
+        "archive_md5_source": "Figshare API metadata; not recomputed locally because the full archive was not downloaded",
+        "india_archive_member": "RDD2022/India.zip",
+        "india_archive_member_bytes": 526709145,
+        "selected_scope": "India/train JPEG images and VOC XML annotations only",
+        "selected_jpeg_count": 7706,
+        "selected_xml_count": 7706,
+        "selected_expanded_bytes": 522941840,
+        "license_note": "Figshare metadata lists CC BY 4.0 while the CRDDC challenge page states CC BY-SA 4.0; confirm which terms apply to the exact image files before redistribution"
+      }
+    }
+  ],
+  "local_files": [
+    {
+      "path": "data/raw/mendeley/v7/news_crashes.xlsx",
+      "status": "downloaded",
+      "bytes": 362593,
+      "sha256": "02ece51f1c04ea44fe3ccbafac150e4c937be79b1d5c1216dc68ab32c66a4228",
+      "role": "structured event sample",
+      "rights_note": "Mendeley Data v7 Data Files folder; CC BY 4.0 dataset compilation; underlying source limitations apply"
+    },
+    {
+      "path": "data/raw/mendeley/v7/data_dictionary.xlsx",
+      "status": "downloaded",
+      "bytes": 10004,
+      "sha256": "60d5e5e0e7850b5edc2157b229fec6cbeee037985782599a3bdda7efb1d51770",
+      "role": "field definitions",
+      "rights_note": "Mendeley Data v7 Data Files folder"
+    },
+    {
+      "path": "data/raw/mendeley/v7/raw_articles/2022_raw_data.csv",
+      "status": "downloaded",
+      "bytes": 2251157,
+      "sha256": "da8c3fb8058d5953b321a1f227fb1fc5936cb1169f87ecc86035d6434234e755",
+      "role": "2022 raw news article text for local NLP only",
+      "rights_note": "Mendeley Data v7 Raw Data folder; news article text subject to underlying copyright; do not redistribute"
+    },
+    {
+      "path": "data/raw/mendeley/v7/raw_articles/2023_download_error.json",
+      "status": "download_error_not_data",
+      "bytes": 395,
+      "sha256": "2e118e328ee7484c4b3329055b1440b9476c7b04fa2fbd0961804ccc20560590",
+      "role": "failed API response; excluded from all analysis",
+      "rights_note": "Do not parse or count as records."
+    },
+    {
+      "path": "data/raw/sources/Road-Accident-in-India-2023-Publications.pdf",
+      "status": "downloaded",
+      "bytes": 8596105,
+      "sha256": "901505420D5B387052AC51E36B4BDCE0274F6326B614F9EBCEE6E7954D45B5B0",
+      "role": "official aggregate source for selected state and NH tables",
+      "rights_note": "Check official reuse terms before redistributing the source PDF or derived materials"
+    },
+    {
+      "path": "data/raw/rdd2022/India/train/",
+      "status": "selected_subset_downloaded",
+      "files": 15412,
+      "images": 7706,
+      "voc_annotations": 7706,
+      "expanded_bytes": 522941840,
+      "role": "India/train road-damage benchmark subset only; images are not linked to crash events",
+      "rights_note": "Figshare lists CC BY 4.0; check challenge-side conditions before any redistribution"
+    }
+  ]
+}

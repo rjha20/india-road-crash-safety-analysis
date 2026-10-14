@@ -1,0 +1,37 @@
+{
+  "dataset": "RDD2022 India training split",
+  "profiled_at_utc": "2026-10-07T10:10:20.480414+00:00",
+  "train_directories": [
+    "C:\\DS projects\\04-road-safety\\data\\raw\\rdd2022\\India\\train"
+  ],
+  "annotated_images_with_matching_file": 7706,
+  "annotations_by_damage_class": {
+    "D40": 3187,
+    "D00": 1555,
+    "D20": 2021,
+    "D10": 68
+  },
+  "out_of_scope_annotation_instances_by_class": {
+    "D44": 1062,
+    "D01": 179,
+    "D11": 45,
+    "D50": 28,
+    "D43": 57,
+    "D0w0": 1
+  },
+  "images_with_at_least_one_valid_box": 3223,
+  "images_with_no_valid_box": 4483,
+  "images_excluded_due_to_out_of_scope_labels": 1056,
+  "images_eligible_for_four_class_training_and_evaluation": 6650,
+  "eligible_empty_background_images": 3921,
+  "issue_counts": {
+    "unknown_class:D44": 1062,
+    "unknown_class:D01": 179,
+    "unknown_class:D11": 45,
+    "unknown_class:D50": 28,
+    "unknown_class:D43": 57,
+    "unknown_class:D0w0": 1
+  },
+  "training_eligible_images": 6650,
+  "limitation": "RDD2022 images have no verified geocoordinates and are not joined to crash rows. Images bearing annotations outside the four target classes are excluded from fitting and evaluation so those documented defects are not treated as background. Empty XML labels are retained as negatives only when no out-of-scope label is present. The available country-level subset does not identify location or road segment per image."
+}

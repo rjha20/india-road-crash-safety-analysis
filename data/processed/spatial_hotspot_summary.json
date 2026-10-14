@@ -1,0 +1,1371 @@
+{
+  "analysis": "exploratory_spatial_concentration_of_media_reported_fatal_crashes",
+  "input_rows": 2898,
+  "events_within_broad_india_envelope": 2898,
+  "coordinates_excluded_or_unparsed": 0,
+  "candidate_duplicate_rows_flagged": 10,
+  "candidate_duplicate_signature_groups": 5,
+  "candidate_duplicate_rows_retained_in_primary": true,
+  "candidate_duplicate_rows_removed_only_in_sensitivity": 5,
+  "cell_size_degrees": 0.25,
+  "cell_minimum_events_for_export": 5,
+  "coarse_cell_count_exported": 99,
+  "dbscan_primary": {
+    "eps_km": 25.0,
+    "min_samples": 5,
+    "cluster_count": 74,
+    "clustered_events": 1977,
+    "noise_events": 921,
+    "clusters": [
+      {
+        "cluster": 19,
+        "events": 208,
+        "center_latitude_rounded_0_1deg": 28.6,
+        "center_longitude_rounded_0_1deg": 77.2,
+        "states": 4,
+        "date_min": "2022-01-12",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 8,
+        "events": 186,
+        "center_latitude_rounded_0_1deg": 18.7,
+        "center_longitude_rounded_0_1deg": 73.7,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 27,
+        "events": 129,
+        "center_latitude_rounded_0_1deg": 30.7,
+        "center_longitude_rounded_0_1deg": 76.7,
+        "states": 5,
+        "date_min": "2022-01-24",
+        "date_max": "2023-11-27"
+      },
+      {
+        "cluster": 13,
+        "events": 106,
+        "center_latitude_rounded_0_1deg": 22.7,
+        "center_longitude_rounded_0_1deg": 75.9,
+        "states": 1,
+        "date_min": "2022-01-04",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 1,
+        "events": 101,
+        "center_latitude_rounded_0_1deg": 13.0,
+        "center_longitude_rounded_0_1deg": 80.1,
+        "states": 2,
+        "date_min": "2021-12-30",
+        "date_max": "2023-11-13"
+      },
+      {
+        "cluster": 18,
+        "events": 101,
+        "center_latitude_rounded_0_1deg": 20.0,
+        "center_longitude_rounded_0_1deg": 73.8,
+        "states": 1,
+        "date_min": "2022-01-09",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 9,
+        "events": 99,
+        "center_latitude_rounded_0_1deg": 13.0,
+        "center_longitude_rounded_0_1deg": 77.6,
+        "states": 2,
+        "date_min": "2022-01-02",
+        "date_max": "2023-12-20"
+      },
+      {
+        "cluster": 20,
+        "events": 84,
+        "center_latitude_rounded_0_1deg": 22.6,
+        "center_longitude_rounded_0_1deg": 88.4,
+        "states": 1,
+        "date_min": "2022-01-14",
+        "date_max": "2023-12-22"
+      },
+      {
+        "cluster": 23,
+        "events": 70,
+        "center_latitude_rounded_0_1deg": 23.3,
+        "center_longitude_rounded_0_1deg": 77.4,
+        "states": 1,
+        "date_min": "2022-01-25",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 7,
+        "events": 61,
+        "center_latitude_rounded_0_1deg": 17.7,
+        "center_longitude_rounded_0_1deg": 83.2,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-12-23"
+      },
+      {
+        "cluster": 15,
+        "events": 56,
+        "center_latitude_rounded_0_1deg": 17.4,
+        "center_longitude_rounded_0_1deg": 78.4,
+        "states": 1,
+        "date_min": "2022-01-05",
+        "date_max": "2023-12-24"
+      },
+      {
+        "cluster": 2,
+        "events": 36,
+        "center_latitude_rounded_0_1deg": 11.0,
+        "center_longitude_rounded_0_1deg": 77.0,
+        "states": 1,
+        "date_min": "2021-12-30",
+        "date_max": "2023-08-20"
+      },
+      {
+        "cluster": 12,
+        "events": 36,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 81.0,
+        "states": 1,
+        "date_min": "2022-01-02",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 0,
+        "events": 34,
+        "center_latitude_rounded_0_1deg": 15.4,
+        "center_longitude_rounded_0_1deg": 73.9,
+        "states": 1,
+        "date_min": "2021-12-30",
+        "date_max": "2023-12-02"
+      },
+      {
+        "cluster": 34,
+        "events": 34,
+        "center_latitude_rounded_0_1deg": 21.1,
+        "center_longitude_rounded_0_1deg": 79.1,
+        "states": 1,
+        "date_min": "2022-03-04",
+        "date_max": "2023-10-26"
+      },
+      {
+        "cluster": 17,
+        "events": 33,
+        "center_latitude_rounded_0_1deg": 23.0,
+        "center_longitude_rounded_0_1deg": 72.6,
+        "states": 1,
+        "date_min": "2022-01-07",
+        "date_max": "2023-12-16"
+      },
+      {
+        "cluster": 21,
+        "events": 33,
+        "center_latitude_rounded_0_1deg": 10.0,
+        "center_longitude_rounded_0_1deg": 76.4,
+        "states": 1,
+        "date_min": "2022-01-14",
+        "date_max": "2023-09-23"
+      },
+      {
+        "cluster": 4,
+        "events": 29,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 75.8,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-08-28"
+      },
+      {
+        "cluster": 41,
+        "events": 27,
+        "center_latitude_rounded_0_1deg": 10.8,
+        "center_longitude_rounded_0_1deg": 78.6,
+        "states": 1,
+        "date_min": "2022-04-03",
+        "date_max": "2023-09-10"
+      },
+      {
+        "cluster": 14,
+        "events": 26,
+        "center_latitude_rounded_0_1deg": 26.4,
+        "center_longitude_rounded_0_1deg": 80.2,
+        "states": 2,
+        "date_min": "2022-01-06",
+        "date_max": "2023-11-22"
+      },
+      {
+        "cluster": 38,
+        "events": 26,
+        "center_latitude_rounded_0_1deg": 12.9,
+        "center_longitude_rounded_0_1deg": 74.9,
+        "states": 1,
+        "date_min": "2022-03-26",
+        "date_max": "2023-12-29"
+      },
+      {
+        "cluster": 29,
+        "events": 22,
+        "center_latitude_rounded_0_1deg": 21.2,
+        "center_longitude_rounded_0_1deg": 81.6,
+        "states": 2,
+        "date_min": "2022-02-16",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 10,
+        "events": 20,
+        "center_latitude_rounded_0_1deg": 8.6,
+        "center_longitude_rounded_0_1deg": 76.9,
+        "states": 1,
+        "date_min": "2022-01-04",
+        "date_max": "2023-08-29"
+      },
+      {
+        "cluster": 22,
+        "events": 20,
+        "center_latitude_rounded_0_1deg": 25.5,
+        "center_longitude_rounded_0_1deg": 81.9,
+        "states": 1,
+        "date_min": "2022-01-17",
+        "date_max": "2023-09-05"
+      },
+      {
+        "cluster": 6,
+        "events": 18,
+        "center_latitude_rounded_0_1deg": 29.5,
+        "center_longitude_rounded_0_1deg": 77.7,
+        "states": 2,
+        "date_min": "2022-01-01",
+        "date_max": "2023-11-14"
+      },
+      {
+        "cluster": 33,
+        "events": 15,
+        "center_latitude_rounded_0_1deg": 25.6,
+        "center_longitude_rounded_0_1deg": 85.1,
+        "states": 1,
+        "date_min": "2022-02-21",
+        "date_max": "2023-09-19"
+      },
+      {
+        "cluster": 63,
+        "events": 14,
+        "center_latitude_rounded_0_1deg": 32.9,
+        "center_longitude_rounded_0_1deg": 75.1,
+        "states": 1,
+        "date_min": "2022-07-06",
+        "date_max": "2023-11-15"
+      },
+      {
+        "cluster": 30,
+        "events": 13,
+        "center_latitude_rounded_0_1deg": 18.0,
+        "center_longitude_rounded_0_1deg": 79.7,
+        "states": 1,
+        "date_min": "2022-02-19",
+        "date_max": "2023-12-01"
+      },
+      {
+        "cluster": 60,
+        "events": 13,
+        "center_latitude_rounded_0_1deg": 27.5,
+        "center_longitude_rounded_0_1deg": 77.8,
+        "states": 1,
+        "date_min": "2022-07-23",
+        "date_max": "2023-09-06"
+      },
+      {
+        "cluster": 39,
+        "events": 12,
+        "center_latitude_rounded_0_1deg": 29.0,
+        "center_longitude_rounded_0_1deg": 79.4,
+        "states": 2,
+        "date_min": "2022-03-28",
+        "date_max": "2023-06-20"
+      },
+      {
+        "cluster": 40,
+        "events": 12,
+        "center_latitude_rounded_0_1deg": 28.6,
+        "center_longitude_rounded_0_1deg": 79.9,
+        "states": 2,
+        "date_min": "2022-04-03",
+        "date_max": "2023-11-18"
+      },
+      {
+        "cluster": 11,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 16.7,
+        "center_longitude_rounded_0_1deg": 74.3,
+        "states": 2,
+        "date_min": "2022-01-02",
+        "date_max": "2023-11-23"
+      },
+      {
+        "cluster": 16,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 30.7,
+        "center_longitude_rounded_0_1deg": 78.4,
+        "states": 1,
+        "date_min": "2022-01-06",
+        "date_max": "2023-07-05"
+      },
+      {
+        "cluster": 25,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 70.8,
+        "states": 1,
+        "date_min": "2022-01-31",
+        "date_max": "2023-09-06"
+      },
+      {
+        "cluster": 67,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 23.4,
+        "center_longitude_rounded_0_1deg": 85.4,
+        "states": 1,
+        "date_min": "2022-08-09",
+        "date_max": "2023-09-17"
+      },
+      {
+        "cluster": 35,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 29.2,
+        "center_longitude_rounded_0_1deg": 78.5,
+        "states": 2,
+        "date_min": "2022-03-06",
+        "date_max": "2023-08-12"
+      },
+      {
+        "cluster": 37,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 13.7,
+        "center_longitude_rounded_0_1deg": 79.4,
+        "states": 1,
+        "date_min": "2022-03-26",
+        "date_max": "2023-07-09"
+      },
+      {
+        "cluster": 48,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 20.2,
+        "center_longitude_rounded_0_1deg": 74.5,
+        "states": 1,
+        "date_min": "2022-01-09",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 31,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 75.9,
+        "states": 1,
+        "date_min": "2022-02-20",
+        "date_max": "2023-05-27"
+      },
+      {
+        "cluster": 42,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 30.1,
+        "center_longitude_rounded_0_1deg": 78.6,
+        "states": 1,
+        "date_min": "2022-04-05",
+        "date_max": "2023-06-27"
+      },
+      {
+        "cluster": 50,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 13.4,
+        "center_longitude_rounded_0_1deg": 79.0,
+        "states": 1,
+        "date_min": "2022-05-22",
+        "date_max": "2023-12-23"
+      },
+      {
+        "cluster": 51,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 16.5,
+        "center_longitude_rounded_0_1deg": 80.6,
+        "states": 1,
+        "date_min": "2022-03-09",
+        "date_max": "2023-08-27"
+      },
+      {
+        "cluster": 68,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 82.7,
+        "states": 1,
+        "date_min": "2022-10-16",
+        "date_max": "2023-06-03"
+      },
+      {
+        "cluster": 24,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 18.5,
+        "center_longitude_rounded_0_1deg": 83.4,
+        "states": 1,
+        "date_min": "2022-01-28",
+        "date_max": "2023-11-19"
+      },
+      {
+        "cluster": 26,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 27.2,
+        "center_longitude_rounded_0_1deg": 77.3,
+        "states": 1,
+        "date_min": "2022-02-03",
+        "date_max": "2023-12-11"
+      },
+      {
+        "cluster": 45,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 73.2,
+        "states": 1,
+        "date_min": "2022-04-15",
+        "date_max": "2023-07-25"
+      },
+      {
+        "cluster": 46,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 21.2,
+        "center_longitude_rounded_0_1deg": 72.9,
+        "states": 1,
+        "date_min": "2022-04-18",
+        "date_max": "2023-03-10"
+      },
+      {
+        "cluster": 62,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 27.6,
+        "center_longitude_rounded_0_1deg": 75.1,
+        "states": 1,
+        "date_min": "2022-02-19",
+        "date_max": "2023-06-07"
+      },
+      {
+        "cluster": 71,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 9.9,
+        "center_longitude_rounded_0_1deg": 78.1,
+        "states": 1,
+        "date_min": "2022-06-03",
+        "date_max": "2023-08-20"
+      },
+      {
+        "cluster": 56,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 28.0,
+        "center_longitude_rounded_0_1deg": 79.2,
+        "states": 1,
+        "date_min": "2022-06-14",
+        "date_max": "2023-10-29"
+      },
+      {
+        "cluster": 64,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 19.9,
+        "center_longitude_rounded_0_1deg": 72.9,
+        "states": 1,
+        "date_min": "2022-01-26",
+        "date_max": "2023-10-22"
+      },
+      {
+        "cluster": 65,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 33.5,
+        "center_longitude_rounded_0_1deg": 74.3,
+        "states": 1,
+        "date_min": "2022-03-31",
+        "date_max": "2023-11-16"
+      },
+      {
+        "cluster": 36,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 27.2,
+        "center_longitude_rounded_0_1deg": 76.7,
+        "states": 1,
+        "date_min": "2022-03-18",
+        "date_max": "2023-07-19"
+      },
+      {
+        "cluster": 43,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 15.4,
+        "center_longitude_rounded_0_1deg": 75.0,
+        "states": 1,
+        "date_min": "2022-04-05",
+        "date_max": "2022-08-25"
+      },
+      {
+        "cluster": 49,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 19.7,
+        "center_longitude_rounded_0_1deg": 73.6,
+        "states": 1,
+        "date_min": "2022-05-11",
+        "date_max": "2023-04-07"
+      },
+      {
+        "cluster": 52,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 21.8,
+        "center_longitude_rounded_0_1deg": 76.4,
+        "states": 1,
+        "date_min": "2022-05-31",
+        "date_max": "2023-05-24"
+      },
+      {
+        "cluster": 53,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 27.9,
+        "center_longitude_rounded_0_1deg": 79.8,
+        "states": 1,
+        "date_min": "2022-06-02",
+        "date_max": "2023-06-23"
+      },
+      {
+        "cluster": 66,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 25.6,
+        "center_longitude_rounded_0_1deg": 86.0,
+        "states": 1,
+        "date_min": "2022-07-23",
+        "date_max": "2022-10-05"
+      },
+      {
+        "cluster": 3,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.8,
+        "center_longitude_rounded_0_1deg": 71.4,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-02-28"
+      },
+      {
+        "cluster": 5,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 87.0,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-07-11"
+      },
+      {
+        "cluster": 28,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 13.1,
+        "center_longitude_rounded_0_1deg": 78.1,
+        "states": 1,
+        "date_min": "2022-02-16",
+        "date_max": "2023-08-26"
+      },
+      {
+        "cluster": 32,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 24.9,
+        "center_longitude_rounded_0_1deg": 92.8,
+        "states": 1,
+        "date_min": "2022-02-18",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 44,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 23.2,
+        "center_longitude_rounded_0_1deg": 74.4,
+        "states": 2,
+        "date_min": "2022-04-12",
+        "date_max": "2023-02-04"
+      },
+      {
+        "cluster": 47,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 21.8,
+        "center_longitude_rounded_0_1deg": 82.0,
+        "states": 1,
+        "date_min": "2022-04-22",
+        "date_max": "2023-04-09"
+      },
+      {
+        "cluster": 54,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 71.7,
+        "states": 1,
+        "date_min": "2022-06-06",
+        "date_max": "2023-05-04"
+      },
+      {
+        "cluster": 55,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 17.6,
+        "center_longitude_rounded_0_1deg": 76.3,
+        "states": 2,
+        "date_min": "2022-03-11",
+        "date_max": "2023-06-30"
+      },
+      {
+        "cluster": 58,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 23.1,
+        "center_longitude_rounded_0_1deg": 83.2,
+        "states": 1,
+        "date_min": "2022-06-29",
+        "date_max": "2023-08-22"
+      },
+      {
+        "cluster": 59,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 13.8,
+        "center_longitude_rounded_0_1deg": 74.6,
+        "states": 1,
+        "date_min": "2022-07-02",
+        "date_max": "2022-09-20"
+      },
+      {
+        "cluster": 61,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 29.3,
+        "center_longitude_rounded_0_1deg": 80.1,
+        "states": 1,
+        "date_min": "2022-02-22",
+        "date_max": "2023-03-24"
+      },
+      {
+        "cluster": 69,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 29.8,
+        "center_longitude_rounded_0_1deg": 79.9,
+        "states": 1,
+        "date_min": "2022-06-12",
+        "date_max": "2023-09-05"
+      },
+      {
+        "cluster": 70,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 10.4,
+        "center_longitude_rounded_0_1deg": 76.1,
+        "states": 1,
+        "date_min": "2022-12-19",
+        "date_max": "2023-12-15"
+      },
+      {
+        "cluster": 72,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 28.1,
+        "center_longitude_rounded_0_1deg": 78.2,
+        "states": 1,
+        "date_min": "2022-12-07",
+        "date_max": "2023-08-08"
+      },
+      {
+        "cluster": 73,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 71.1,
+        "states": 1,
+        "date_min": "2022-02-03",
+        "date_max": "2023-03-04"
+      },
+      {
+        "cluster": 57,
+        "events": 4,
+        "center_latitude_rounded_0_1deg": 28.4,
+        "center_longitude_rounded_0_1deg": 78.9,
+        "states": 1,
+        "date_min": "2022-06-14",
+        "date_max": "2023-06-24"
+      }
+    ]
+  },
+  "dbscan_after_candidate_duplicate_collapse": {
+    "eps_km": 25.0,
+    "min_samples": 5,
+    "cluster_count": 74,
+    "clustered_events": 1976,
+    "noise_events": 917,
+    "clusters": [
+      {
+        "cluster": 19,
+        "events": 208,
+        "center_latitude_rounded_0_1deg": 28.6,
+        "center_longitude_rounded_0_1deg": 77.2,
+        "states": 4,
+        "date_min": "2022-01-12",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 8,
+        "events": 186,
+        "center_latitude_rounded_0_1deg": 18.7,
+        "center_longitude_rounded_0_1deg": 73.7,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 27,
+        "events": 129,
+        "center_latitude_rounded_0_1deg": 30.7,
+        "center_longitude_rounded_0_1deg": 76.7,
+        "states": 5,
+        "date_min": "2022-01-24",
+        "date_max": "2023-11-27"
+      },
+      {
+        "cluster": 13,
+        "events": 106,
+        "center_latitude_rounded_0_1deg": 22.7,
+        "center_longitude_rounded_0_1deg": 75.9,
+        "states": 1,
+        "date_min": "2022-01-04",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 1,
+        "events": 101,
+        "center_latitude_rounded_0_1deg": 13.0,
+        "center_longitude_rounded_0_1deg": 80.1,
+        "states": 2,
+        "date_min": "2021-12-30",
+        "date_max": "2023-11-13"
+      },
+      {
+        "cluster": 18,
+        "events": 101,
+        "center_latitude_rounded_0_1deg": 20.0,
+        "center_longitude_rounded_0_1deg": 73.8,
+        "states": 1,
+        "date_min": "2022-01-09",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 9,
+        "events": 99,
+        "center_latitude_rounded_0_1deg": 13.0,
+        "center_longitude_rounded_0_1deg": 77.6,
+        "states": 2,
+        "date_min": "2022-01-02",
+        "date_max": "2023-12-20"
+      },
+      {
+        "cluster": 20,
+        "events": 84,
+        "center_latitude_rounded_0_1deg": 22.6,
+        "center_longitude_rounded_0_1deg": 88.4,
+        "states": 1,
+        "date_min": "2022-01-14",
+        "date_max": "2023-12-22"
+      },
+      {
+        "cluster": 23,
+        "events": 70,
+        "center_latitude_rounded_0_1deg": 23.3,
+        "center_longitude_rounded_0_1deg": 77.4,
+        "states": 1,
+        "date_min": "2022-01-25",
+        "date_max": "2023-12-26"
+      },
+      {
+        "cluster": 7,
+        "events": 61,
+        "center_latitude_rounded_0_1deg": 17.7,
+        "center_longitude_rounded_0_1deg": 83.2,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-12-23"
+      },
+      {
+        "cluster": 15,
+        "events": 56,
+        "center_latitude_rounded_0_1deg": 17.4,
+        "center_longitude_rounded_0_1deg": 78.4,
+        "states": 1,
+        "date_min": "2022-01-05",
+        "date_max": "2023-12-24"
+      },
+      {
+        "cluster": 2,
+        "events": 36,
+        "center_latitude_rounded_0_1deg": 11.0,
+        "center_longitude_rounded_0_1deg": 77.0,
+        "states": 1,
+        "date_min": "2021-12-30",
+        "date_max": "2023-08-20"
+      },
+      {
+        "cluster": 12,
+        "events": 35,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 81.0,
+        "states": 1,
+        "date_min": "2022-01-02",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 0,
+        "events": 34,
+        "center_latitude_rounded_0_1deg": 15.4,
+        "center_longitude_rounded_0_1deg": 73.9,
+        "states": 1,
+        "date_min": "2021-12-30",
+        "date_max": "2023-12-02"
+      },
+      {
+        "cluster": 34,
+        "events": 34,
+        "center_latitude_rounded_0_1deg": 21.1,
+        "center_longitude_rounded_0_1deg": 79.1,
+        "states": 1,
+        "date_min": "2022-03-04",
+        "date_max": "2023-10-26"
+      },
+      {
+        "cluster": 17,
+        "events": 33,
+        "center_latitude_rounded_0_1deg": 23.0,
+        "center_longitude_rounded_0_1deg": 72.6,
+        "states": 1,
+        "date_min": "2022-01-07",
+        "date_max": "2023-12-16"
+      },
+      {
+        "cluster": 21,
+        "events": 33,
+        "center_latitude_rounded_0_1deg": 10.0,
+        "center_longitude_rounded_0_1deg": 76.4,
+        "states": 1,
+        "date_min": "2022-01-14",
+        "date_max": "2023-09-23"
+      },
+      {
+        "cluster": 4,
+        "events": 29,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 75.8,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-08-28"
+      },
+      {
+        "cluster": 41,
+        "events": 27,
+        "center_latitude_rounded_0_1deg": 10.8,
+        "center_longitude_rounded_0_1deg": 78.6,
+        "states": 1,
+        "date_min": "2022-04-03",
+        "date_max": "2023-09-10"
+      },
+      {
+        "cluster": 14,
+        "events": 26,
+        "center_latitude_rounded_0_1deg": 26.4,
+        "center_longitude_rounded_0_1deg": 80.2,
+        "states": 2,
+        "date_min": "2022-01-06",
+        "date_max": "2023-11-22"
+      },
+      {
+        "cluster": 38,
+        "events": 26,
+        "center_latitude_rounded_0_1deg": 12.9,
+        "center_longitude_rounded_0_1deg": 74.9,
+        "states": 1,
+        "date_min": "2022-03-26",
+        "date_max": "2023-12-29"
+      },
+      {
+        "cluster": 29,
+        "events": 22,
+        "center_latitude_rounded_0_1deg": 21.2,
+        "center_longitude_rounded_0_1deg": 81.6,
+        "states": 2,
+        "date_min": "2022-02-16",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 10,
+        "events": 20,
+        "center_latitude_rounded_0_1deg": 8.6,
+        "center_longitude_rounded_0_1deg": 76.9,
+        "states": 1,
+        "date_min": "2022-01-04",
+        "date_max": "2023-08-29"
+      },
+      {
+        "cluster": 22,
+        "events": 20,
+        "center_latitude_rounded_0_1deg": 25.5,
+        "center_longitude_rounded_0_1deg": 81.9,
+        "states": 1,
+        "date_min": "2022-01-17",
+        "date_max": "2023-09-05"
+      },
+      {
+        "cluster": 6,
+        "events": 18,
+        "center_latitude_rounded_0_1deg": 29.5,
+        "center_longitude_rounded_0_1deg": 77.7,
+        "states": 2,
+        "date_min": "2022-01-01",
+        "date_max": "2023-11-14"
+      },
+      {
+        "cluster": 33,
+        "events": 15,
+        "center_latitude_rounded_0_1deg": 25.6,
+        "center_longitude_rounded_0_1deg": 85.1,
+        "states": 1,
+        "date_min": "2022-02-21",
+        "date_max": "2023-09-19"
+      },
+      {
+        "cluster": 63,
+        "events": 14,
+        "center_latitude_rounded_0_1deg": 32.9,
+        "center_longitude_rounded_0_1deg": 75.1,
+        "states": 1,
+        "date_min": "2022-07-06",
+        "date_max": "2023-11-15"
+      },
+      {
+        "cluster": 30,
+        "events": 13,
+        "center_latitude_rounded_0_1deg": 18.0,
+        "center_longitude_rounded_0_1deg": 79.7,
+        "states": 1,
+        "date_min": "2022-02-19",
+        "date_max": "2023-12-01"
+      },
+      {
+        "cluster": 60,
+        "events": 13,
+        "center_latitude_rounded_0_1deg": 27.5,
+        "center_longitude_rounded_0_1deg": 77.8,
+        "states": 1,
+        "date_min": "2022-07-23",
+        "date_max": "2023-09-06"
+      },
+      {
+        "cluster": 39,
+        "events": 12,
+        "center_latitude_rounded_0_1deg": 29.0,
+        "center_longitude_rounded_0_1deg": 79.4,
+        "states": 2,
+        "date_min": "2022-03-28",
+        "date_max": "2023-06-20"
+      },
+      {
+        "cluster": 40,
+        "events": 12,
+        "center_latitude_rounded_0_1deg": 28.6,
+        "center_longitude_rounded_0_1deg": 79.9,
+        "states": 2,
+        "date_min": "2022-04-03",
+        "date_max": "2023-11-18"
+      },
+      {
+        "cluster": 11,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 16.7,
+        "center_longitude_rounded_0_1deg": 74.3,
+        "states": 2,
+        "date_min": "2022-01-02",
+        "date_max": "2023-11-23"
+      },
+      {
+        "cluster": 16,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 30.7,
+        "center_longitude_rounded_0_1deg": 78.4,
+        "states": 1,
+        "date_min": "2022-01-06",
+        "date_max": "2023-07-05"
+      },
+      {
+        "cluster": 25,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 70.8,
+        "states": 1,
+        "date_min": "2022-01-31",
+        "date_max": "2023-09-06"
+      },
+      {
+        "cluster": 67,
+        "events": 11,
+        "center_latitude_rounded_0_1deg": 23.4,
+        "center_longitude_rounded_0_1deg": 85.4,
+        "states": 1,
+        "date_min": "2022-08-09",
+        "date_max": "2023-09-17"
+      },
+      {
+        "cluster": 35,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 29.2,
+        "center_longitude_rounded_0_1deg": 78.5,
+        "states": 2,
+        "date_min": "2022-03-06",
+        "date_max": "2023-08-12"
+      },
+      {
+        "cluster": 37,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 13.7,
+        "center_longitude_rounded_0_1deg": 79.4,
+        "states": 1,
+        "date_min": "2022-03-26",
+        "date_max": "2023-07-09"
+      },
+      {
+        "cluster": 48,
+        "events": 10,
+        "center_latitude_rounded_0_1deg": 20.2,
+        "center_longitude_rounded_0_1deg": 74.5,
+        "states": 1,
+        "date_min": "2022-01-09",
+        "date_max": "2023-12-17"
+      },
+      {
+        "cluster": 31,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 75.9,
+        "states": 1,
+        "date_min": "2022-02-20",
+        "date_max": "2023-05-27"
+      },
+      {
+        "cluster": 42,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 30.1,
+        "center_longitude_rounded_0_1deg": 78.6,
+        "states": 1,
+        "date_min": "2022-04-05",
+        "date_max": "2023-06-27"
+      },
+      {
+        "cluster": 50,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 13.4,
+        "center_longitude_rounded_0_1deg": 79.0,
+        "states": 1,
+        "date_min": "2022-05-22",
+        "date_max": "2023-12-23"
+      },
+      {
+        "cluster": 51,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 16.5,
+        "center_longitude_rounded_0_1deg": 80.6,
+        "states": 1,
+        "date_min": "2022-03-09",
+        "date_max": "2023-08-27"
+      },
+      {
+        "cluster": 68,
+        "events": 9,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 82.7,
+        "states": 1,
+        "date_min": "2022-10-16",
+        "date_max": "2023-06-03"
+      },
+      {
+        "cluster": 24,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 18.5,
+        "center_longitude_rounded_0_1deg": 83.4,
+        "states": 1,
+        "date_min": "2022-01-28",
+        "date_max": "2023-11-19"
+      },
+      {
+        "cluster": 26,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 27.2,
+        "center_longitude_rounded_0_1deg": 77.3,
+        "states": 1,
+        "date_min": "2022-02-03",
+        "date_max": "2023-12-11"
+      },
+      {
+        "cluster": 45,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 22.3,
+        "center_longitude_rounded_0_1deg": 73.2,
+        "states": 1,
+        "date_min": "2022-04-15",
+        "date_max": "2023-07-25"
+      },
+      {
+        "cluster": 46,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 21.2,
+        "center_longitude_rounded_0_1deg": 72.9,
+        "states": 1,
+        "date_min": "2022-04-18",
+        "date_max": "2023-03-10"
+      },
+      {
+        "cluster": 62,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 27.6,
+        "center_longitude_rounded_0_1deg": 75.1,
+        "states": 1,
+        "date_min": "2022-02-19",
+        "date_max": "2023-06-07"
+      },
+      {
+        "cluster": 71,
+        "events": 8,
+        "center_latitude_rounded_0_1deg": 9.9,
+        "center_longitude_rounded_0_1deg": 78.1,
+        "states": 1,
+        "date_min": "2022-06-03",
+        "date_max": "2023-08-20"
+      },
+      {
+        "cluster": 56,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 28.0,
+        "center_longitude_rounded_0_1deg": 79.2,
+        "states": 1,
+        "date_min": "2022-06-14",
+        "date_max": "2023-10-29"
+      },
+      {
+        "cluster": 64,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 19.9,
+        "center_longitude_rounded_0_1deg": 72.9,
+        "states": 1,
+        "date_min": "2022-01-26",
+        "date_max": "2023-10-22"
+      },
+      {
+        "cluster": 65,
+        "events": 7,
+        "center_latitude_rounded_0_1deg": 33.5,
+        "center_longitude_rounded_0_1deg": 74.3,
+        "states": 1,
+        "date_min": "2022-03-31",
+        "date_max": "2023-11-16"
+      },
+      {
+        "cluster": 36,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 27.2,
+        "center_longitude_rounded_0_1deg": 76.7,
+        "states": 1,
+        "date_min": "2022-03-18",
+        "date_max": "2023-07-19"
+      },
+      {
+        "cluster": 43,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 15.4,
+        "center_longitude_rounded_0_1deg": 75.0,
+        "states": 1,
+        "date_min": "2022-04-05",
+        "date_max": "2022-08-25"
+      },
+      {
+        "cluster": 49,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 19.7,
+        "center_longitude_rounded_0_1deg": 73.6,
+        "states": 1,
+        "date_min": "2022-05-11",
+        "date_max": "2023-04-07"
+      },
+      {
+        "cluster": 52,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 21.8,
+        "center_longitude_rounded_0_1deg": 76.4,
+        "states": 1,
+        "date_min": "2022-05-31",
+        "date_max": "2023-05-24"
+      },
+      {
+        "cluster": 53,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 27.9,
+        "center_longitude_rounded_0_1deg": 79.8,
+        "states": 1,
+        "date_min": "2022-06-02",
+        "date_max": "2023-06-23"
+      },
+      {
+        "cluster": 66,
+        "events": 6,
+        "center_latitude_rounded_0_1deg": 25.6,
+        "center_longitude_rounded_0_1deg": 86.0,
+        "states": 1,
+        "date_min": "2022-07-23",
+        "date_max": "2022-10-05"
+      },
+      {
+        "cluster": 3,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.8,
+        "center_longitude_rounded_0_1deg": 71.4,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-02-28"
+      },
+      {
+        "cluster": 5,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 87.0,
+        "states": 1,
+        "date_min": "2022-01-01",
+        "date_max": "2023-07-11"
+      },
+      {
+        "cluster": 28,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 13.1,
+        "center_longitude_rounded_0_1deg": 78.1,
+        "states": 1,
+        "date_min": "2022-02-16",
+        "date_max": "2023-08-26"
+      },
+      {
+        "cluster": 32,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 24.9,
+        "center_longitude_rounded_0_1deg": 92.8,
+        "states": 1,
+        "date_min": "2022-02-18",
+        "date_max": "2023-12-27"
+      },
+      {
+        "cluster": 44,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 23.2,
+        "center_longitude_rounded_0_1deg": 74.4,
+        "states": 2,
+        "date_min": "2022-04-12",
+        "date_max": "2023-02-04"
+      },
+      {
+        "cluster": 47,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 21.8,
+        "center_longitude_rounded_0_1deg": 82.0,
+        "states": 1,
+        "date_min": "2022-04-22",
+        "date_max": "2023-04-09"
+      },
+      {
+        "cluster": 54,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 25.2,
+        "center_longitude_rounded_0_1deg": 71.7,
+        "states": 1,
+        "date_min": "2022-06-06",
+        "date_max": "2023-05-04"
+      },
+      {
+        "cluster": 55,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 17.6,
+        "center_longitude_rounded_0_1deg": 76.3,
+        "states": 2,
+        "date_min": "2022-03-11",
+        "date_max": "2023-06-30"
+      },
+      {
+        "cluster": 58,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 23.1,
+        "center_longitude_rounded_0_1deg": 83.2,
+        "states": 1,
+        "date_min": "2022-06-29",
+        "date_max": "2023-08-22"
+      },
+      {
+        "cluster": 59,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 13.8,
+        "center_longitude_rounded_0_1deg": 74.6,
+        "states": 1,
+        "date_min": "2022-07-02",
+        "date_max": "2022-09-20"
+      },
+      {
+        "cluster": 61,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 29.3,
+        "center_longitude_rounded_0_1deg": 80.1,
+        "states": 1,
+        "date_min": "2022-02-22",
+        "date_max": "2023-03-24"
+      },
+      {
+        "cluster": 69,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 29.8,
+        "center_longitude_rounded_0_1deg": 79.9,
+        "states": 1,
+        "date_min": "2022-06-12",
+        "date_max": "2023-09-05"
+      },
+      {
+        "cluster": 70,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 10.4,
+        "center_longitude_rounded_0_1deg": 76.1,
+        "states": 1,
+        "date_min": "2022-12-19",
+        "date_max": "2023-12-15"
+      },
+      {
+        "cluster": 72,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 28.1,
+        "center_longitude_rounded_0_1deg": 78.2,
+        "states": 1,
+        "date_min": "2022-12-07",
+        "date_max": "2023-08-08"
+      },
+      {
+        "cluster": 73,
+        "events": 5,
+        "center_latitude_rounded_0_1deg": 26.9,
+        "center_longitude_rounded_0_1deg": 71.1,
+        "states": 1,
+        "date_min": "2022-02-03",
+        "date_max": "2023-03-04"
+      },
+      {
+        "cluster": 57,
+        "events": 4,
+        "center_latitude_rounded_0_1deg": 28.4,
+        "center_longitude_rounded_0_1deg": 78.9,
+        "states": 1,
+        "date_min": "2022-06-14",
+        "date_max": "2023-06-24"
+      }
+    ]
+  },
+  "limitations": [
+    "All input rows are selected fatal crashes reported by a single newspaper; clusters are reported-event concentration, not crash incidence or road risk.",
+    "The coordinates were parsed and checked only against a broad India envelope; positional accuracy and road-network matching were not audited.",
+    "No traffic-volume, vehicle-kilometre, road-length, or population exposure denominator is available.",
+    "Conservative candidate duplicate signatures are surfaced. The primary result retains them; a sensitivity run collapses signatures, which may also merge distinct events.",
+    "DBSCAN depends on the chosen distance/minimum-support parameters. Clusters are exploratory review candidates, not official black spots.",
+    "Coarse grid cells with fewer than five events are suppressed; output cell centroids are approximate and should not be reverse-geocoded to individuals."
+  ]
+}

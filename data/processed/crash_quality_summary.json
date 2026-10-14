@@ -1,0 +1,104 @@
+{
+  "source_file": "news_crashes.xlsx",
+  "source_sha256": "02ece51f1c04ea44fe3ccbafac150e4c937be79b1d5c1216dc68ab32c66a4228",
+  "rows": 2898,
+  "physical_columns": 17,
+  "dictionary_variables_excluding_serial": 16,
+  "source_row_id_unique": true,
+  "source_row_id_missing": 0,
+  "exact_duplicate_rows_including_serial": 0,
+  "duplicate_signature_rows_flagged": 10,
+  "duplicate_signature_groups": 5,
+  "crash_date_min": "2021-12-30",
+  "crash_date_max": "2023-12-30",
+  "article_date_min": "2022-01-01",
+  "article_date_max": "2023-12-31",
+  "crash_month_disagreement_count": 164,
+  "crash_weekday_disagreement_count": 2,
+  "coordinates_parsed_count": 2898,
+  "coordinates_in_india_envelope_count": 2898,
+  "coordinates_outside_envelope_count": 0,
+  "coordinates_unparsed_count": 0,
+  "states": 30,
+  "fatality_min": 1.0,
+  "fatality_max": 39.0,
+  "total_fatalities_in_sample": 6584,
+  "total_injuries_in_sample": 7812,
+  "fatality_band_counts": {
+    "one_fatality": 1442,
+    "two_or_more_fatalities": 1456,
+    "missing_or_invalid": 0
+  },
+  "missingness": {
+    "Age": {
+      "count": 729,
+      "pct": 25.1553
+    },
+    "Gender": {
+      "count": 263,
+      "pct": 9.0752
+    },
+    "Million Plus City": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Date": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Killed": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Vehicle/Object 2": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Type": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "S. No.": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Vehicle 1": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Road Type": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Crash Day": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Location": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "State": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Month": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Article Date": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "LatLong": {
+      "count": 0,
+      "pct": 0.0
+    },
+    "Injured": {
+      "count": 0,
+      "pct": 0.0
+    }
+  },
+  "privacy_note": "Age/Gender source values are not copied to processed crash_events_clean.csv.",
+  "interpretation_note": "Media-selected fatal crashes; not representative of all crashes and not a risk-rate denominator."
+}

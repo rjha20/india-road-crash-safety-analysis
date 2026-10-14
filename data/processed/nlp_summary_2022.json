@@ -1,0 +1,68 @@
+{
+  "source_file": "2022_raw_data.csv",
+  "source_sha256": "da8c3fb8058d5953b321a1f227fb1fc5936cb1169f87ecc86035d6434234e755",
+  "source_year_scope": "2022 raw articles only",
+  "source_rows": 1568,
+  "usable_nonempty_articles": 1568,
+  "exact_duplicate_articles_removed_for_counts": 3,
+  "unique_articles_analyzed": 1565,
+  "title_column_detected": "Title",
+  "article_date_column_detected": "Date",
+  "content_column_detected": "content",
+  "articles_with_unparsed_or_missing_article_date": 0,
+  "article_date_min": "2022-01-01",
+  "article_date_max": "2022-12-31",
+  "theme_mentions": {
+    "heavy_vehicle_mentioned": {
+      "articles": 829,
+      "share_pct": 52.971
+    },
+    "two_wheeler_mentioned": {
+      "articles": 604,
+      "share_pct": 38.594
+    },
+    "speed_or_unsafe_manoeuvre": {
+      "articles": 600,
+      "share_pct": 38.339
+    },
+    "hit_and_run_mentioned": {
+      "articles": 126,
+      "share_pct": 8.051
+    },
+    "pedestrian_or_cyclist_mentioned": {
+      "articles": 97,
+      "share_pct": 6.198
+    },
+    "helmet_mentioned": {
+      "articles": 79,
+      "share_pct": 5.048
+    },
+    "weather_or_visibility": {
+      "articles": 57,
+      "share_pct": 3.642
+    },
+    "alcohol_mentioned": {
+      "articles": 46,
+      "share_pct": 2.939
+    },
+    "wrong_side_or_lane": {
+      "articles": 45,
+      "share_pct": 2.875
+    },
+    "road_surface_or_design": {
+      "articles": 42,
+      "share_pct": 2.684
+    },
+    "seat_belt_mentioned": {
+      "articles": 1,
+      "share_pct": 0.064
+    }
+  },
+  "limitations": [
+    "Only the accessible 2022 raw-article file was analyzed; the 2023 request produced a 395-byte internal-error JSON response and was excluded.",
+    "The 2022 prose is a media-selected corpus of fatal-crash reporting, not all crashes or a representative population sample.",
+    "Keyword themes are weak mention indicators. Negation, attribution, chronology, sarcasm, and event causation are not resolved.",
+    "No manually adjudicated gold sample is available; precision, recall, F1, and model accuracy are not reported.",
+    "Article bodies, titles, names, and article-level tags are not written to processed artifacts; raw text remains in the local source folder."
+  ]
+}

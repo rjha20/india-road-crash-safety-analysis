@@ -1,0 +1,275 @@
+{
+  "project": "India road-crash hotspot and hazard analysis — CV road-surface detector",
+  "created_at_utc": "2026-10-07T10:38:45.749090+00:00",
+  "dataset_doi": "10.6084/m9.figshare.21431547.v1",
+  "dataset_manifest": "C:\\DS projects\\04-road-safety\\data\\raw\\rdd2022\\source_manifest.json",
+  "model": {
+    "architecture": "Torchvision Faster R-CNN MobileNetV3-Large 320 FPN",
+    "pretrained_on_coco": true,
+    "fine_tuned_classes": {
+      "1": "D00",
+      "2": "D10",
+      "3": "D20",
+      "4": "D40"
+    },
+    "optimizer": "AdamW",
+    "learning_rate": 5e-05,
+    "batch_size": 2,
+    "epochs": 1,
+    "device": "cpu",
+    "checkpoint": "C:\\DS projects\\04-road-safety\\data\\processed\\vision\\fasterrcnn_mobilenetv3_rdd2022_india.pt"
+  },
+  "evaluation": {
+    "split_file": "C:\\DS projects\\04-road-safety\\data\\processed\\vision\\grouped_split.json",
+    "selected_run_split_file": "C:\\DS projects\\04-road-safety\\data\\processed\\vision\\selected_run_split.json",
+    "split_type": "deterministic holdout by blocks of sequential numeric image IDs (proxy only)",
+    "is_verified_geographic_holdout": false,
+    "train_images_used": 1200,
+    "validation_images_used": 300,
+    "training_target_instance_counts": {
+      "D00": 579,
+      "D40": 1330,
+      "D20": 714,
+      "D10": 29
+    },
+    "validation_target_instance_counts": {
+      "D20": 74,
+      "D40": 122,
+      "D00": 72,
+      "D10": 3
+    },
+    "full_grouped_train_images_available": 2192,
+    "full_grouped_validation_images_available": 1356,
+    "zero_target_train_images_excluded_to_avoid_nonfinite_empty_only_batches": 3102,
+    "clean_zero_target_validation_images_retained": 181,
+    "selected_checkpoint_epoch": 1,
+    "seed": 42,
+    "confidence_threshold": 0.5,
+    "selected_checkpoint_metrics": {
+      "iou_thresholds_for_ap": [
+        0.5,
+        0.55,
+        0.6,
+        0.65,
+        0.7,
+        0.75,
+        0.8,
+        0.85,
+        0.9,
+        0.95
+      ],
+      "confidence_threshold_for_precision_recall_f1": 0.5,
+      "micro_precision_at_iou50": 0.5813953488372093,
+      "micro_recall_at_iou50": 0.09225092250922509,
+      "micro_f1_at_iou50": 0.15923566878980894,
+      "map50_macro_over_classes_with_ground_truth": 0.12643060891760108,
+      "map50_95_macro_over_classes_with_ground_truth": 0.03855561940638366,
+      "per_class": {
+        "D00": {
+          "ground_truth_instances": 72,
+          "predicted_instances": 658,
+          "precision_at_iou50_confidence_threshold": 0.0,
+          "recall_at_iou50_confidence_threshold": 0.0,
+          "f1_at_iou50_confidence_threshold": 0.0,
+          "ap50": 0.04468108483654314,
+          "ap50_95": 0.005855809761147375,
+          "ap_by_iou_threshold": {
+            "0.50": 0.04468108483654314,
+            "0.55": 0.0062993316892187,
+            "0.60": 0.004249271802761731,
+            "0.65": 0.0032077743378052972,
+            "0.70": 8.599931200550395e-05,
+            "0.75": 3.4635633139373784e-05,
+            "0.80": 0.0,
+            "0.85": 0.0,
+            "0.90": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "D10": {
+          "ground_truth_instances": 3,
+          "predicted_instances": 0,
+          "precision_at_iou50_confidence_threshold": 0.0,
+          "recall_at_iou50_confidence_threshold": 0.0,
+          "f1_at_iou50_confidence_threshold": 0.0,
+          "ap50": 0.0,
+          "ap50_95": 0.0,
+          "ap_by_iou_threshold": {
+            "0.50": 0.0,
+            "0.55": 0.0,
+            "0.60": 0.0,
+            "0.65": 0.0,
+            "0.70": 0.0,
+            "0.75": 0.0,
+            "0.80": 0.0,
+            "0.85": 0.0,
+            "0.90": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "D20": {
+          "ground_truth_instances": 74,
+          "predicted_instances": 743,
+          "precision_at_iou50_confidence_threshold": 0.5813953488372093,
+          "recall_at_iou50_confidence_threshold": 0.33783783783783783,
+          "f1_at_iou50_confidence_threshold": 0.4273504273504274,
+          "ap50": 0.3892847935816872,
+          "ap50_95": 0.1271112168516029,
+          "ap_by_iou_threshold": {
+            "0.50": 0.3892847935816872,
+            "0.55": 0.35123576317478633,
+            "0.60": 0.1928961533646064,
+            "0.65": 0.13827607436573386,
+            "0.70": 0.110147427750623,
+            "0.75": 0.052585537239231865,
+            "0.80": 0.02992966228260346,
+            "0.85": 0.006756756756756757,
+            "0.90": 0.0,
+            "0.95": 0.0
+          }
+        },
+        "D40": {
+          "ground_truth_instances": 122,
+          "predicted_instances": 1069,
+          "precision_at_iou50_confidence_threshold": 0.0,
+          "recall_at_iou50_confidence_threshold": 0.0,
+          "f1_at_iou50_confidence_threshold": 0.0,
+          "ap50": 0.07175655725217395,
+          "ap50_95": 0.021255451012784386,
+          "ap_by_iou_threshold": {
+            "0.50": 0.07175655725217395,
+            "0.55": 0.05116387284575621,
+            "0.60": 0.0460784752021649,
+            "0.65": 0.013819181899158341,
+            "0.70": 0.012931675293594297,
+            "0.75": 0.010679240848463481,
+            "0.80": 0.005993301604089547,
+            "0.85": 0.00013220518244315177,
+            "0.90": 0.0,
+            "0.95": 0.0
+          }
+        }
+      }
+    },
+    "epoch_history": [
+      {
+        "epoch": 1,
+        "mean_training_loss": 0.45479425388077893,
+        "validation_metrics": {
+          "iou_thresholds_for_ap": [
+            0.5,
+            0.55,
+            0.6,
+            0.65,
+            0.7,
+            0.75,
+            0.8,
+            0.85,
+            0.9,
+            0.95
+          ],
+          "confidence_threshold_for_precision_recall_f1": 0.5,
+          "micro_precision_at_iou50": 0.5813953488372093,
+          "micro_recall_at_iou50": 0.09225092250922509,
+          "micro_f1_at_iou50": 0.15923566878980894,
+          "map50_macro_over_classes_with_ground_truth": 0.12643060891760108,
+          "map50_95_macro_over_classes_with_ground_truth": 0.03855561940638366,
+          "per_class": {
+            "D00": {
+              "ground_truth_instances": 72,
+              "predicted_instances": 658,
+              "precision_at_iou50_confidence_threshold": 0.0,
+              "recall_at_iou50_confidence_threshold": 0.0,
+              "f1_at_iou50_confidence_threshold": 0.0,
+              "ap50": 0.04468108483654314,
+              "ap50_95": 0.005855809761147375,
+              "ap_by_iou_threshold": {
+                "0.50": 0.04468108483654314,
+                "0.55": 0.0062993316892187,
+                "0.60": 0.004249271802761731,
+                "0.65": 0.0032077743378052972,
+                "0.70": 8.599931200550395e-05,
+                "0.75": 3.4635633139373784e-05,
+                "0.80": 0.0,
+                "0.85": 0.0,
+                "0.90": 0.0,
+                "0.95": 0.0
+              }
+            },
+            "D10": {
+              "ground_truth_instances": 3,
+              "predicted_instances": 0,
+              "precision_at_iou50_confidence_threshold": 0.0,
+              "recall_at_iou50_confidence_threshold": 0.0,
+              "f1_at_iou50_confidence_threshold": 0.0,
+              "ap50": 0.0,
+              "ap50_95": 0.0,
+              "ap_by_iou_threshold": {
+                "0.50": 0.0,
+                "0.55": 0.0,
+                "0.60": 0.0,
+                "0.65": 0.0,
+                "0.70": 0.0,
+                "0.75": 0.0,
+                "0.80": 0.0,
+                "0.85": 0.0,
+                "0.90": 0.0,
+                "0.95": 0.0
+              }
+            },
+            "D20": {
+              "ground_truth_instances": 74,
+              "predicted_instances": 743,
+              "precision_at_iou50_confidence_threshold": 0.5813953488372093,
+              "recall_at_iou50_confidence_threshold": 0.33783783783783783,
+              "f1_at_iou50_confidence_threshold": 0.4273504273504274,
+              "ap50": 0.3892847935816872,
+              "ap50_95": 0.1271112168516029,
+              "ap_by_iou_threshold": {
+                "0.50": 0.3892847935816872,
+                "0.55": 0.35123576317478633,
+                "0.60": 0.1928961533646064,
+                "0.65": 0.13827607436573386,
+                "0.70": 0.110147427750623,
+                "0.75": 0.052585537239231865,
+                "0.80": 0.02992966228260346,
+                "0.85": 0.006756756756756757,
+                "0.90": 0.0,
+                "0.95": 0.0
+              }
+            },
+            "D40": {
+              "ground_truth_instances": 122,
+              "predicted_instances": 1069,
+              "precision_at_iou50_confidence_threshold": 0.0,
+              "recall_at_iou50_confidence_threshold": 0.0,
+              "f1_at_iou50_confidence_threshold": 0.0,
+              "ap50": 0.07175655725217395,
+              "ap50_95": 0.021255451012784386,
+              "ap_by_iou_threshold": {
+                "0.50": 0.07175655725217395,
+                "0.55": 0.05116387284575621,
+                "0.60": 0.0460784752021649,
+                "0.65": 0.013819181899158341,
+                "0.70": 0.012931675293594297,
+                "0.75": 0.010679240848463481,
+                "0.80": 0.005993301604089547,
+                "0.85": 0.00013220518244315177,
+                "0.90": 0.0,
+                "0.95": 0.0
+              }
+            }
+          }
+        },
+        "epoch_seconds": 1275.48
+      }
+    ]
+  },
+  "interpretation_limits": [
+    "Metrics describe this held-out subset of annotated RDD2022 India training images only.",
+    "The holdout groups are filename-sequence proxies; source files contain no verified location grouping.",
+    "The challenge test images have no public ground truth and were not scored.",
+    "RDD2022 image locations/timestamps are not linked to the separate crash events in this project.",
+    "Detection is a surface-condition cue for human inspection, not evidence that a road defect caused a crash."
+  ]
+}

@@ -1,0 +1,386 @@
+{
+  "project": "India Road-Crash Hotspot and Hazard Analysis",
+  "source": "Mendeley Data v7 structured workbook; fatal crashes reported by Times of India",
+  "estimand": "P(recorded Killed >= 2 | event is in this source's reported fatal-crash sample, four structured event features)",
+  "target_definition": "1 if Killed >= 2, otherwise 0 (one recorded death)",
+  "rows_used": 2898,
+  "class_counts": {
+    "one_recorded_death": 1442,
+    "two_or_more_recorded_deaths": 1456
+  },
+  "positive_prevalence": 0.5024154589371981,
+  "groups": {
+    "field": "State",
+    "count": 30,
+    "cv": "5-fold StratifiedGroupKFold; whole states held out"
+  },
+  "features": [
+    "road_type",
+    "crash_type",
+    "vehicle_1",
+    "vehicle_2"
+  ],
+  "excluded_fields": [
+    "Killed except as target",
+    "Injured (post-event and outcome-correlated)",
+    "Age",
+    "Gender",
+    "Article Date (publication/reporting leakage)",
+    "State (used only for group separation)",
+    "Location, coordinates, row number, and source narrative"
+  ],
+  "validation": {
+    "strategy": "Pooled out-of-fold predictions from stratified grouped CV by state; no state appears in both train and validation within a fold.",
+    "temporal_holdout": false,
+    "split_unit": "State",
+    "threshold": 0.5,
+    "threshold_note": "Diagnostic default only; not an operational decision threshold.",
+    "seed": 42
+  },
+  "model": {
+    "type": "one-hot encoded logistic regression",
+    "class_weight": "balanced",
+    "imputer": "constant Not stated",
+    "rare_category_min_frequency": 2
+  },
+  "out_of_fold_metrics": {
+    "accuracy": 0.6835748792270532,
+    "balanced_accuracy": 0.6837125253387389,
+    "precision_at_0_5": 0.6968590211833455,
+    "recall_at_0_5": 0.6552197802197802,
+    "f1_at_0_5": 0.6753982300884955,
+    "brier_score": 0.20439163938802857,
+    "confusion_matrix_labels_0_1": [
+      [
+        1027,
+        415
+      ],
+      [
+        502,
+        954
+      ]
+    ],
+    "roc_auc": 0.7462177645516758,
+    "average_precision": 0.7417931795444968,
+    "positive_prevalence": 0.5024154589371981,
+    "cluster_bootstrap_ci": {
+      "f1": {
+        "lower_95": 0.6388413232130637,
+        "upper_95": 0.7067992461940918,
+        "replicates": 500
+      },
+      "average_precision": {
+        "lower_95": 0.6910597674794189,
+        "upper_95": 0.785548011700691,
+        "replicates": 500
+      },
+      "roc_auc": {
+        "lower_95": 0.7184238905044379,
+        "upper_95": 0.7697882555509726,
+        "replicates": 500
+      }
+    }
+  },
+  "majority_baseline_metrics": {
+    "accuracy": 0.45479641131815046,
+    "balanced_accuracy": 0.45545716419502824,
+    "precision_at_0_5": 0.44106463878326996,
+    "recall_at_0_5": 0.31868131868131866,
+    "f1_at_0_5": 0.3700159489633174,
+    "brier_score": 0.5452035886818496,
+    "confusion_matrix_labels_0_1": [
+      [
+        854,
+        588
+      ],
+      [
+        992,
+        464
+      ]
+    ],
+    "roc_auc": 0.45545716419502824,
+    "average_precision": 0.4828640986683639,
+    "positive_prevalence": 0.5024154589371981
+  },
+  "folds": [
+    {
+      "fold": 1,
+      "held_out_states": [
+        "Himachal Pradesh",
+        "Jammu",
+        "Maharashtra",
+        "Manipur",
+        "Mizoram",
+        "Nagaland",
+        "Sikkim"
+      ],
+      "rows": 515,
+      "model": {
+        "accuracy": 0.7456310679611651,
+        "balanced_accuracy": 0.7448630136986301,
+        "precision_at_0_5": 0.6864406779661016,
+        "recall_at_0_5": 0.7397260273972602,
+        "f1_at_0_5": 0.7120879120879121,
+        "brier_score": 0.1815254758801406,
+        "confusion_matrix_labels_0_1": [
+          [
+            222,
+            74
+          ],
+          [
+            57,
+            162
+          ]
+        ],
+        "roc_auc": 0.8094764284832778,
+        "average_precision": 0.7620509175331296,
+        "positive_prevalence": 0.42524271844660194
+      },
+      "majority_baseline": {
+        "accuracy": 0.42524271844660194,
+        "balanced_accuracy": 0.5,
+        "precision_at_0_5": 0.42524271844660194,
+        "recall_at_0_5": 1.0,
+        "f1_at_0_5": 0.5967302452316077,
+        "brier_score": 0.574757281553398,
+        "confusion_matrix_labels_0_1": [
+          [
+            0,
+            296
+          ],
+          [
+            0,
+            219
+          ]
+        ],
+        "roc_auc": 0.5,
+        "average_precision": 0.42524271844660194,
+        "positive_prevalence": 0.42524271844660194
+      }
+    },
+    {
+      "fold": 2,
+      "held_out_states": [
+        "Chhatisgarh",
+        "Kerala",
+        "Meghalaya",
+        "Tamil Nadu",
+        "Uttar Pradesh"
+      ],
+      "rows": 627,
+      "model": {
+        "accuracy": 0.6427432216905901,
+        "balanced_accuracy": 0.6434811758638473,
+        "precision_at_0_5": 0.696875,
+        "recall_at_0_5": 0.6371428571428571,
+        "f1_at_0_5": 0.6656716417910448,
+        "brier_score": 0.22171701790942966,
+        "confusion_matrix_labels_0_1": [
+          [
+            180,
+            97
+          ],
+          [
+            127,
+            223
+          ]
+        ],
+        "roc_auc": 0.7073233625580196,
+        "average_precision": 0.7498273721357818,
+        "positive_prevalence": 0.5582137161084529
+      },
+      "majority_baseline": {
+        "accuracy": 0.44178628389154706,
+        "balanced_accuracy": 0.5,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0,
+        "brier_score": 0.5582137161084529,
+        "confusion_matrix_labels_0_1": [
+          [
+            277,
+            0
+          ],
+          [
+            350,
+            0
+          ]
+        ],
+        "roc_auc": 0.5,
+        "average_precision": 0.5582137161084529,
+        "positive_prevalence": 0.5582137161084529
+      }
+    },
+    {
+      "fold": 3,
+      "held_out_states": [
+        "Bihar",
+        "Chhattisgarh",
+        "Delhi",
+        "Gujarat",
+        "Jharkhand",
+        "Telangana",
+        "Uttarakhand",
+        "West Bengal"
+      ],
+      "rows": 614,
+      "model": {
+        "accuracy": 0.6807817589576547,
+        "balanced_accuracy": 0.6855896126011068,
+        "precision_at_0_5": 0.7461538461538462,
+        "recall_at_0_5": 0.5987654320987654,
+        "f1_at_0_5": 0.6643835616438356,
+        "brier_score": 0.20234045835739897,
+        "confusion_matrix_labels_0_1": [
+          [
+            224,
+            66
+          ],
+          [
+            130,
+            194
+          ]
+        ],
+        "roc_auc": 0.754459344401873,
+        "average_precision": 0.7641736096971773,
+        "positive_prevalence": 0.5276872964169381
+      },
+      "majority_baseline": {
+        "accuracy": 0.4723127035830619,
+        "balanced_accuracy": 0.5,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0,
+        "brier_score": 0.5276872964169381,
+        "confusion_matrix_labels_0_1": [
+          [
+            290,
+            0
+          ],
+          [
+            324,
+            0
+          ]
+        ],
+        "roc_auc": 0.5,
+        "average_precision": 0.5276872964169381,
+        "positive_prevalence": 0.5276872964169381
+      }
+    },
+    {
+      "fold": 4,
+      "held_out_states": [
+        "Andhra Pradesh",
+        "Chandigarh",
+        "Goa",
+        "Haryana",
+        "Punjab",
+        "Rajasthan"
+      ],
+      "rows": 605,
+      "model": {
+        "accuracy": 0.6743801652892562,
+        "balanced_accuracy": 0.6730984156202748,
+        "precision_at_0_5": 0.6873065015479877,
+        "recall_at_0_5": 0.6981132075471698,
+        "f1_at_0_5": 0.6926677067082684,
+        "brier_score": 0.20317045851952767,
+        "confusion_matrix_labels_0_1": [
+          [
+            186,
+            101
+          ],
+          [
+            96,
+            222
+          ]
+        ],
+        "roc_auc": 0.7495398067188219,
+        "average_precision": 0.7593950736501691,
+        "positive_prevalence": 0.5256198347107438
+      },
+      "majority_baseline": {
+        "accuracy": 0.4743801652892562,
+        "balanced_accuracy": 0.5,
+        "precision_at_0_5": 0.0,
+        "recall_at_0_5": 0.0,
+        "f1_at_0_5": 0.0,
+        "brier_score": 0.5256198347107438,
+        "confusion_matrix_labels_0_1": [
+          [
+            287,
+            0
+          ],
+          [
+            318,
+            0
+          ]
+        ],
+        "roc_auc": 0.5,
+        "average_precision": 0.5256198347107438,
+        "positive_prevalence": 0.5256198347107438
+      }
+    },
+    {
+      "fold": 5,
+      "held_out_states": [
+        "Assam",
+        "Karnataka",
+        "Madhya Pradesh",
+        "Odisha"
+      ],
+      "rows": 537,
+      "model": {
+        "accuracy": 0.6852886405959032,
+        "balanced_accuracy": 0.6803955828906905,
+        "precision_at_0_5": 0.6652173913043479,
+        "recall_at_0_5": 0.6244897959183674,
+        "f1_at_0_5": 0.6442105263157895,
+        "brier_score": 0.20981305736175943,
+        "confusion_matrix_labels_0_1": [
+          [
+            215,
+            77
+          ],
+          [
+            92,
+            153
+          ]
+        ],
+        "roc_auc": 0.7295778585406765,
+        "average_precision": 0.6803343285470738,
+        "positive_prevalence": 0.45623836126629425
+      },
+      "majority_baseline": {
+        "accuracy": 0.45623836126629425,
+        "balanced_accuracy": 0.5,
+        "precision_at_0_5": 0.45623836126629425,
+        "recall_at_0_5": 1.0,
+        "f1_at_0_5": 0.6265984654731458,
+        "brier_score": 0.5437616387337058,
+        "confusion_matrix_labels_0_1": [
+          [
+            0,
+            292
+          ],
+          [
+            0,
+            245
+          ]
+        ],
+        "roc_auc": 0.5,
+        "average_precision": 0.45623836126629425,
+        "positive_prevalence": 0.45623836126629425
+      }
+    }
+  ],
+  "model_artifact": "data/processed/conditional_fatality_band_logistic.joblib",
+  "limitations": [
+    "All records are already fatal crashes; model cannot predict crash occurrence or a road segment's future crash rate.",
+    "Events are media-selected and the sample is not representative of all police-reported or unreported crashes.",
+    "No traffic exposure, complete nonfatal denominator, or linked road-segment panel is available.",
+    "Grouped validation tests transfer to held-out states within this source, not future-year performance.",
+    "Probabilities are exploratory, not calibrated for emergency, enforcement, engineering, insurance, or public decisions.",
+    "Associations are predictive descriptions, not causal effects or evidence that an attribute caused the crash."
+  ]
+}

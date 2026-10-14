@@ -1,0 +1,30 @@
+{
+  "dataset": "RDD2022 / India / train",
+  "figshare_doi": "10.6084/m9.figshare.21431547.v1",
+  "archive_name": "RDD2022_released_through_CRDDC2022.zip",
+  "archive_size_bytes": 13264172619,
+  "archive_md5": "b62bd51d2ffcfaa76c60f234f0cc2bb3",
+  "archive_total_members": 7,
+  "outer_archive_india_member": "RDD2022/India.zip",
+  "outer_archive_india_member_bytes": 526709145,
+  "india_archive_total_members": 17377,
+  "india_train_image_members": 7706,
+  "india_train_annotation_members": 7706,
+  "india_train_compressed_bytes": 417461649,
+  "india_train_uncompressed_bytes": 522941840,
+  "india_train_first_member_offset": 106686044,
+  "india_train_last_member_end_offset": 525226517,
+  "non_train_members_interleaved_in_india_train_span": 0,
+  "member_path_examples": [
+    "India/train/annotations/xmls/India_000000.xml",
+    "India/train/annotations/xmls/India_000001.xml",
+    "India/train/annotations/xmls/India_000002.xml",
+    "India/train/annotations/xmls/India_000003.xml",
+    "India/train/annotations/xmls/India_000005.xml"
+  ],
+  "selection": "Only India/train .jpg and .xml files; no test or other-country members.",
+  "range_reader_requests_for_index": 4,
+  "range_reader_bytes_for_index": 18560588,
+  "range_reader_block_size_bytes": 8388608,
+  "indexed_at_utc": "2026-10-07T09:57:54.457492+00:00"
+}

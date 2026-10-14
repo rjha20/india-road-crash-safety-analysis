@@ -1,0 +1,28 @@
+# Raw/source data and locally trained model weights are not redistributed with this project.
+data/raw/**
+!data/raw/
+!data/raw/**/
+!data/raw/**/README.md
+!data/raw/**/source_manifest.json
+# Row-level derived extracts and fitted artifacts can retain source attributes.
+data/processed/crash_events_clean.csv
+data/processed/crash_duplicate_signatures.csv
+data/processed/conditional_fatality_band_logistic.joblib
+data/processed/vision/voc_records.json
+data/processed/vision/grouped_split.json
+data/processed/vision/*.pt
+data/processed/vision/*.pth
+data/processed/vision/**/*.pt
+data/processed/vision/**/*.pth
+data/processed/vision/predictions/
+models/**
+!models/.gitkeep
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+.streamlit/secrets.toml
+.env
+.env.*
+!.env.example

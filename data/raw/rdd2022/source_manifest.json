@@ -1,0 +1,87 @@
+{
+  "dataset": "RDD2022 India training split",
+  "prepared_date": "2026-10-07",
+  "release": {
+    "title": "RDD2022 - The multi-national Road Damage Dataset released through CRDDC 2022",
+    "doi": "10.6084/m9.figshare.21431547.v1",
+    "figshare_article": "https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547",
+    "figshare_api": "https://api.figshare.com/v2/articles/21431547",
+    "figshare_file_name": "RDD2022_released_through_CRDDC2022.zip",
+    "figshare_file_size_bytes": 13264172619,
+    "figshare_file_md5": "b62bd51d2ffcfaa76c60f234f0cc2bb3",
+    "challenge_source": "https://crddc2022.sekilab.global/data/",
+    "official_country_zip_url": "https://bigdatacup.s3.ap-northeast-1.amazonaws.com/2022/CRDDC2022/RDD2022/Country_Specific_Data_CRDDC2022/RDD2022_India.zip",
+    "official_country_zip_observed_http_status": 403,
+    "retrieval_method": "Figshare ZIP central-directory inspection and selective India/train member reads using HTTP byte ranges; no full-archive save",
+    "license_figshare_metadata": "CC BY 4.0",
+    "license_challenge_page": "CC BY-SA 4.0 (challenge image license statement)",
+    "license_handling": "The repository metadata and challenge page state different CC licenses. Preserve source attribution and this conflict; confirm the relevant file/image terms before redistribution. This portfolio does not republish the source images.",
+    "retrieved_date": "2026-10-07",
+    "figshare_file_md5_provenance": "Figshare API computed_md5 metadata; not locally recomputed",
+    "challenge_page_india_train_image_count_approx": 9000,
+    "observed_india_train_image_count_in_figshare_archive": 7706,
+    "image_count_note": "The CRDDC page rounds India train images to about 9,000; the RDD2022 Figshare India.zip member actually contains 7,706 India/train JPEG+XML pairs. This analysis uses the archive enumeration count.",
+    "challenge_rules_source": "https://crddc2022.sekilab.global/rules/"
+  },
+  "geography_and_period": {
+    "country": "India",
+    "collection_description": "Delhi and Gurugram metropolitan areas, with other collection areas mainly in Haryana",
+    "collection_vintage": "RDD2022 release; collection period is not a crash-event period",
+    "geolocation_available": false
+  },
+  "labels": {
+    "D00": "longitudinal_crack",
+    "D10": "transverse_crack",
+    "D20": "alligator_crack",
+    "D40": "pothole"
+  },
+  "use_limitations": [
+    "Images are road-surface condition examples and are not linked to any crash record, date, or coordinate.",
+    "A detected defect cannot be described as a cause or predictor of an observed crash.",
+    "The challenge test split has no public annotations and is not used for this evaluation.",
+    "Collection areas and conditions do not represent every Indian road or season."
+  ],
+  "selective_archive_profile": {
+    "dataset": "RDD2022 / India / train",
+    "figshare_doi": "10.6084/m9.figshare.21431547.v1",
+    "archive_name": "RDD2022_released_through_CRDDC2022.zip",
+    "archive_size_bytes": 13264172619,
+    "archive_md5": "b62bd51d2ffcfaa76c60f234f0cc2bb3",
+    "archive_total_members": 7,
+    "outer_archive_india_member": "RDD2022/India.zip",
+    "outer_archive_india_member_bytes": 526709145,
+    "india_archive_total_members": 17377,
+    "india_train_image_members": 7706,
+    "india_train_annotation_members": 7706,
+    "india_train_compressed_bytes": 417461649,
+    "india_train_uncompressed_bytes": 522941840,
+    "india_train_first_member_offset": 106686044,
+    "india_train_last_member_end_offset": 525226517,
+    "non_train_members_interleaved_in_india_train_span": 0,
+    "member_path_examples": [
+      "India/train/annotations/xmls/India_000000.xml",
+      "India/train/annotations/xmls/India_000001.xml",
+      "India/train/annotations/xmls/India_000002.xml",
+      "India/train/annotations/xmls/India_000003.xml",
+      "India/train/annotations/xmls/India_000005.xml"
+    ],
+    "selection": "Only India/train .jpg and .xml files; no test or other-country members.",
+    "range_reader_requests_for_index": 4,
+    "range_reader_bytes_for_index": 18560588,
+    "range_reader_block_size_bytes": 8388608,
+    "indexed_at_utc": "2026-10-07T09:57:54.457492+00:00"
+  },
+  "extraction": {
+    "selected_archive_members": 15412,
+    "extracted_files": 15412,
+    "extracted_bytes": 522941840,
+    "transport_range_requests": 55,
+    "transport_bytes_received_including_cache_blocks": 446379596,
+    "elapsed_seconds": 173.62,
+    "whole_archive_downloaded": false,
+    "full_archive_md5_locally_verified": false,
+    "figshare_full_archive_md5_is_upstream_metadata_only": true,
+    "selected_inner_train_member_crc_checked_by_zipfile": true,
+    "outer_india_zip_crc_checked": false
+  }
+}

@@ -1,0 +1,12 @@
+theme,articles_with_mention,article_share_pct,label_type
+heavy_vehicle_mentioned,829,52.971,weak keyword mention; not gold annotation or cause
+two_wheeler_mentioned,604,38.594,weak keyword mention; not gold annotation or cause
+speed_or_unsafe_manoeuvre,600,38.339,weak keyword mention; not gold annotation or cause
+hit_and_run_mentioned,126,8.051,weak keyword mention; not gold annotation or cause
+pedestrian_or_cyclist_mentioned,97,6.198,weak keyword mention; not gold annotation or cause
+helmet_mentioned,79,5.048,weak keyword mention; not gold annotation or cause
+weather_or_visibility,57,3.642,weak keyword mention; not gold annotation or cause
+alcohol_mentioned,46,2.939,weak keyword mention; not gold annotation or cause
+wrong_side_or_lane,45,2.875,weak keyword mention; not gold annotation or cause
+road_surface_or_design,42,2.684,weak keyword mention; not gold annotation or cause
+seat_belt_mentioned,1,0.064,weak keyword mention; not gold annotation or cause

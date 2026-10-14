@@ -1,0 +1,18 @@
+S. No.,Variable Name,Data Type,Description
+1,Crash Number,Integer,It is a unique ID that's given to each crash.
+2,Month,Character,"This variable contains the month the crash happened, as reported in the article."
+3,Crash Date,Date,"This variable contains the date the crash happened, as reported in the article."
+4,Crash Day,Character,"This variable contains the day of the week the crash happened, as reported in the article."
+5,Article Date,Date,This variable contains the date on which the first article describing that crash was published.
+6,Location,Character,"This variable contains the name of the location where the crash occurred, as reported in the article. "
+7,Million Plus City,Character,"This variable contains the name of the million-plus population city if the crash occurred within its jurisdiction, as reported in the article."
+8,State,Character,"This variable contains the name of the Indian state where the crash occurred, as reported in the article."
+9,LatLong,Tuple,"This variable contains the location coordinates where the crash occurred, as reported in the article."
+10,Vehicle 1,Character,"This variable contains the type of vehicle the crash victim was driving, as reported in the article."
+11,Vehicle/Object 2,Character,"This variable contains the type of vehicle/object involved in that crash as the striking entity, as reported in the article."
+12,Killed,Integer,"This variable contains the number of people killed in the crash, as reported in the article."
+13,Injured,Integer,"This variable contains the number of people injured in the crash, as reported in the article."
+14,Age,String,"This variable contains the age of victims who died in the crash, as reported in the article. Due to the absence of data in some articles, the age column also has NA values."
+15,Gender,Character,"This variable contains the gender of the victims who died in the crash, as reported in the article."
+16,Road Type,Character,"This variable contains the type of road where the crash occurred, as reported in the article."
+17,Crash Type,Character,"This variable contains the type of collision that occurred, as reported in the article."

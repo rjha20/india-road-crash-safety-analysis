@@ -1,0 +1,26 @@
+project:
+  id: india-road-safety
+  title: India Road-Crash Hotspot and Hazard Analysis
+  purpose: exploratory portfolio research to support qualified human engineering review
+  geography: India; state-level public fatality aggregates plus a non-representative media-reported event sample
+  timezone: Asia/Kolkata
+  random_seed: 42
+  source_data_is_redistributable: false
+  never_label_media_sample_counts_as_population_risk: true
+
+sources:
+  mendeley_crash_data:
+    doi: 10.17632/bc5sv6wnd9.7
+    url: https://data.mendeley.com/datasets/bc5sv6wnd9/7
+    version: 7
+    license: CC BY 4.0 per dataset landing page
+    note: Underlying Times of India article text remains subject to original copyright; keep local and do not republish raw text.
+  morth_2023:
+    url: https://www.morth.gov.in/sites/default/files/Road-Accident-in-India-2023-Publications.pdf
+    report_year: 2023
+    license: verify current terms before redistribution
+  rdd2022:
+    doi: 10.6084/m9.figshare.21431547.v1
+    url: https://figshare.com/articles/dataset/RDD2022_-_The_multi-national_Road_Damage_Dataset_released_through_CRDDC_2022/21431547
+    license: CC BY 4.0
+    note: India component is concentrated in Delhi, Gurugram, and Haryana; RDD labels are not linked to crash events.
